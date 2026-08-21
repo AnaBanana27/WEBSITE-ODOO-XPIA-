@@ -1,0 +1,717 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&amp;display=swap" rel="stylesheet">
+
+<section class="xm">
+
+  <div class="xm-decor xm-decor-1"></div>
+  <div class="xm-decor xm-decor-2"></div>
+  <div class="xm-decor xm-decor-3"></div>
+  <span class="xm-shape xm-shape-ring xm-s1"></span>
+  <span class="xm-shape xm-shape-ring xm-s2"></span>
+  <span class="xm-shape xm-shape-diamond xm-s3"></span>
+  <span class="xm-shape xm-shape-diamond xm-s4"></span>
+  <span class="xm-shape xm-shape-dot xm-s5"></span>
+  <span class="xm-shape xm-shape-dot xm-s6"></span>
+  <span class="xm-shape xm-shape-plus xm-s7"></span>
+  <span class="xm-shape xm-shape-plus xm-s8"></span>
+
+  <div class="xm-news">
+    <div class="xm-news-head">
+      <span class="xm-eyebrow">// Noticias</span>
+      <h3>Lo último del blog</h3>
+    </div>
+    <div class="xm-news-track" id="xmNewsTrack"></div>
+  </div>
+
+  <div class="xm-head">
+    <div class="xm-head-text">
+      <span class="xm-eyebrow">// Catálogo XPIA</span>
+      <h2>Módulos que se <span>conectan</span> entre sí</h2>
+      <p>Cada pieza de tu operación, correlacionada. Elige un área y explora.</p>
+    </div>
+  </div>
+
+  <div class="xm-search-wrap">
+    <div class="xm-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+      <input type="text" id="xmSearch" placeholder="Buscar un módulo…" autocomplete="off">
+    </div>
+    <div class="xm-pager" id="xmPager">01 <em>/ 11</em></div>
+  </div>
+
+  <div class="xm-tabs" id="xmTabs">
+    <button class="xm-tab is-active" data-cat="todos">Todos</button>
+    <button class="xm-tab" data-cat="rh">Recursos humanos</button>
+    <button class="xm-tab" data-cat="mkt">Marketing</button>
+    <button class="xm-tab" data-cat="ops">Operaciones</button>
+    <button class="xm-tab" data-cat="ventas">Ventas</button>
+    <button class="xm-tab" data-cat="fin">Finanzas</button>
+    <span class="xm-tab-indicator"></span>
+  </div>
+
+  <div class="xm-grid" id="xmGrid"></div>
+  <p class="xm-empty" id="xmEmpty">No encontramos módulos con ese nombre.</p>
+
+</section>
+
+<style>
+  .xm{
+    --purple:#4A2A82;   --purple-d:#2E1857;
+    --teal:#6A388D;     --teal-d:#472563;
+    --coral:#EA5773;    --coral-d:#C93A56;
+    --amber:#CE007F;    --amber-d:#970A5D;
+    --blue:#2A2172;     --blue-d:#17123F;
+    --pink:#DB3389;     --pink-d:#A80F63;
+    --ink:#161319;
+    --ink-soft:#8B879A;
+    --paper:#FFFFFF;
+    position:relative;
+    background:var(--paper);
+    overflow:hidden;
+    padding:96px 24px 104px;
+    font-family:'Montserrat',sans-serif;
+    color:var(--ink);
+    max-width:1240px;
+    margin:0 auto;
+  }
+  .xm *{box-sizing:border-box; font-family:'Montserrat',sans-serif;}
+
+  /* --- decoration --- */
+  .xm-decor{
+    position:absolute; border-radius:50%; z-index:0; pointer-events:none;
+    filter:blur(2px);
+  }
+  .xm-decor-1{
+    width:520px; height:520px; top:-260px; right:-180px;
+    background:radial-gradient(circle at 30% 30%, #EA577322, #EA577300 70%);
+    animation:xmFloatA 16s ease-in-out infinite;
+  }
+  .xm-decor-2{
+    width:420px; height:420px; bottom:-200px; left:-160px;
+    background:radial-gradient(circle at 60% 40%, #2A217222, #2A217200 70%);
+    animation:xmFloatB 20s ease-in-out infinite;
+  }
+  .xm-decor-3{
+    width:0; height:0;
+    top:0; left:0; right:0; bottom:0; position:absolute;
+    background-image:radial-gradient(circle, #EFEBF2 1px, transparent 1px);
+    background-size:22px 22px;
+    opacity:.8;
+  }
+
+  /* --- floating shapes (repositionadas para no encimarse con las tarjetas) --- */
+  .xm-shape{
+    position:absolute; z-index:0; pointer-events:none; display:block; opacity:.5;
+  }
+  .xm-shape-ring{
+    border-radius:50%; border:2.5px solid currentColor; background:none;
+  }
+  .xm-shape-diamond{
+    border:2.5px solid currentColor; background:none; transform:rotate(45deg);
+  }
+  .xm-shape-dot{ border-radius:50%; }
+  .xm-shape-plus{ background:none; }
+  .xm-shape-plus::before, .xm-shape-plus::after{
+    content:''; position:absolute; background:currentColor;
+  }
+  .xm-shape-plus::before{ top:50%; left:0; width:100%; height:2.5px; transform:translateY(-50%); }
+  .xm-shape-plus::after{ left:50%; top:0; height:100%; width:2.5px; transform:translateX(-50%); }
+
+  .xm-s1{ width:64px; height:64px; top:5%;   left:2%;  color:var(--coral);  animation:xmFloatA 12s ease-in-out infinite; }
+  .xm-s2{ width:38px; height:38px; top:14%;  right:3%; color:var(--blue);   animation:xmFloatB 15s ease-in-out infinite; }
+  .xm-s3{ width:26px; height:26px; top:9%;   right:23%; color:var(--purple); animation:xmSpin 24s linear infinite, xmFloatA 10s ease-in-out infinite; }
+  .xm-s4{ width:18px; height:18px; bottom:3%; left:3%;  color:var(--teal);  animation:xmSpin 18s linear infinite reverse; }
+  .xm-s5{ width:12px; height:12px; top:48%;  left:0.5%; background:var(--amber); animation:xmFloatB 9s ease-in-out infinite; }
+  .xm-s6{ width:9px;  height:9px;  top:52%;  right:1%;  background:var(--pink); animation:xmFloatA 11s ease-in-out infinite; }
+  .xm-s7{ width:22px; height:22px; top:19%;  left:34%;  color:var(--amber); animation:xmFloatB 13s ease-in-out infinite; }
+  .xm-s8{ width:16px; height:16px; bottom:2%; right:2%; color:var(--coral); animation:xmFloatA 17s ease-in-out infinite; }
+
+  @keyframes xmFloatA{
+    0%,100%{ transform:translate(0,0) rotate(0deg); }
+    50%{ transform:translate(22px,-30px) rotate(14deg); }
+  }
+  @keyframes xmFloatB{
+    0%,100%{ transform:translate(0,0) rotate(0deg); }
+    50%{ transform:translate(-20px,26px) rotate(-12deg); }
+  }
+  @keyframes xmSpin{ to{ transform:rotate(360deg); } }
+
+  @media (max-width:640px){
+    .xm-shape{ display:none; }
+  }
+
+  .xm-head, .xm-search-wrap, .xm-tabs, .xm-grid, .xm-empty, .xm-news{ position:relative; z-index:1; }
+
+  /* --- news section: medallones circulares conectados --- */
+  .xm-news{ margin-bottom:64px; }
+  .xm-news-head{ margin-bottom:8px; display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .xm-news-head .xm-eyebrow{ margin-bottom:10px; font-size:13px; }
+  .xm-news-head h3{
+    font-weight:900; font-size:clamp(28px,3.6vw,42px); margin:0; letter-spacing:-.02em;
+  }
+  .xm-news-track{
+    position:relative;
+    display:flex; align-items:flex-start; gap:38px;
+    overflow-x:auto; overflow-y:visible;
+    padding:74px 30px 40px;
+    scroll-snap-type:x proximity;
+    scrollbar-width:thin; scrollbar-color:#DAD5E0 transparent;
+  }
+  .xm-news-track::-webkit-scrollbar{ height:6px; }
+  .xm-news-track::-webkit-scrollbar-thumb{ background:#DAD5E0; border-radius:6px; }
+  .xm-news-track::before{
+    content:''; position:absolute; left:8px; right:8px; top:50%;
+    border-top:2.5px dashed #DED8E4; transform:translateY(-50%); z-index:0;
+  }
+
+  .xm-news-card{
+    position:relative; z-index:1; flex:0 0 auto; scroll-snap-align:start;
+    width:216px; height:216px; border-radius:50%; cursor:pointer; overflow:visible;
+    display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
+    text-align:center; padding:0 26px 26px;
+    opacity:0; transform:translateY(18px) scale(.88);
+    transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease;
+  }
+  .xm-news-card.is-visible{
+    animation:xmRiseCircle .6s cubic-bezier(.2,.8,.2,1) forwards;
+  }
+  @keyframes xmRiseCircle{ to{ opacity:1; transform:translateY(0) scale(1); } }
+  .xm-news-card:hover{ transform:translateY(-6px); }
+  .xm-news-card:focus-visible{ outline:3px solid var(--ink); outline-offset:4px; }
+
+  .xm-news-clip{
+    position:absolute; inset:0; z-index:0; border-radius:50%; overflow:hidden;
+    box-shadow:0 20px 34px -18px rgba(22,19,25,.35);
+    transition:box-shadow .3s ease;
+  }
+  .xm-news-card:hover .xm-news-clip{ box-shadow:0 26px 46px -14px rgba(22,19,25,.45); }
+
+  .xm-news-photo{
+    position:absolute; inset:0; z-index:0;
+    background-size:cover; background-position:center;
+    transition:transform .5s cubic-bezier(.2,.8,.2,1);
+  }
+  .xm-news-card:hover .xm-news-photo{ transform:scale(1.1) rotate(2deg); }
+
+  .xm-news-overlay{ position:absolute; inset:0; z-index:1; pointer-events:none; }
+
+  .xm-news-badge{
+    position:relative; z-index:2; align-self:flex-start; margin:16px 0 auto 16px;
+    font-family:'Montserrat',sans-serif;
+    font-size:9.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+    color:#fff; background:rgba(255,255,255,.22); backdrop-filter:blur(4px);
+    padding:4px 10px; border-radius:999px;
+  }
+
+  .xm-news-title{
+    position:relative; z-index:2;
+    font-family:'Montserrat',sans-serif;
+    color:#fff; font-weight:800; font-size:12.5px; line-height:1.28; margin:0 0 6px;
+    letter-spacing:-.005em;
+    display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
+  }
+  .xm-news-tag{ position:relative; z-index:2; font-family:'Montserrat',sans-serif; color:rgba(255,255,255,.82); font-size:10.5px; font-weight:700; }
+
+  .xm-news-arrow{
+    position:absolute; bottom:-15px; left:50%; transform:translateX(-50%);
+    width:30px; height:30px; border-radius:50%; background:#fff; z-index:2;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 16px -4px rgba(22,19,25,.4);
+    transition:transform .3s ease, background .3s ease;
+  }
+  .xm-news-arrow svg{ width:14px; height:14px; stroke:var(--ink); transition:stroke .3s ease; }
+  .xm-news-card:hover .xm-news-arrow{ transform:translateX(-50%) translateY(3px) rotate(90deg); background:var(--ink); }
+  .xm-news-card:hover .xm-news-arrow svg{ stroke:#fff; }
+
+  @media (max-width:640px){
+    .xm-news-track{ gap:26px; padding:60px 20px 32px; }
+    .xm-news-card{ width:168px; height:168px; padding:0 18px 20px; }
+    .xm-news-title{ font-size:11.5px; }
+  }
+
+  .xm-head{
+    display:flex; justify-content:center; text-align:center;
+    margin-bottom:36px;
+  }
+  .xm-head-text{ max-width:720px; display:flex; flex-direction:column; align-items:center; }
+  .xm-eyebrow{
+    display:block; font-weight:700; font-size:13px; letter-spacing:.06em;
+    color:var(--purple); margin-bottom:16px; font-family:'Courier New',monospace;
+  }
+  .xm-head h2{
+    font-weight:900; font-size:clamp(38px,5.6vw,64px); line-height:1.05;
+    letter-spacing:-.02em; margin:0 0 18px;
+  }
+  .xm-head h2 span{ color:#CE007F; font-style:italic; }
+  .xm-head p{ font-size:17px; color:var(--ink-soft); margin:0; max-width:460px; font-weight:500; }
+
+  /* --- search bar --- */
+  .xm-search-wrap{
+    display:flex; align-items:center; justify-content:center; gap:16px;
+    margin-bottom:36px; flex-wrap:wrap;
+  }
+  .xm-search{
+    display:flex; align-items:center; gap:10px;
+    width:100%; max-width:440px;
+    background:#fff; border:1.5px solid #E7E3EC; border-radius:999px;
+    padding:13px 20px; box-shadow:0 10px 26px -18px rgba(22,19,25,.35);
+    transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  .xm-search:focus-within{
+    border-color:#CE007F;
+    box-shadow:0 12px 30px -16px rgba(206,0,127,.35);
+  }
+  .xm-search svg{ width:18px; height:18px; stroke:var(--ink-soft); flex-shrink:0; }
+  .xm-search input{
+    border:none; outline:none; font-family:'Montserrat',sans-serif;
+    font-weight:600; font-size:14.5px; color:var(--ink); width:100%; background:transparent;
+  }
+  .xm-search input::placeholder{ color:var(--ink-soft); font-weight:500; }
+
+  .xm-pager{
+    font-weight:800; font-size:15px; color:var(--ink); white-space:nowrap;
+    padding-bottom:6px; border-bottom:3px solid var(--ink);
+  }
+  .xm-pager em{ font-style:normal; color:var(--ink-soft); font-weight:600; }
+
+  .xm-tabs{
+    position:relative;
+    display:flex; gap:28px; flex-wrap:wrap; justify-content:center;
+    border-bottom:1.5px solid #EDEAF1; margin-bottom:40px; padding-bottom:0;
+  }
+  .xm-tab{
+    background:none; border:none; cursor:pointer; font-family:'Montserrat',sans-serif;
+    font-weight:700; font-size:15px; color:var(--ink-soft);
+    padding:0 0 16px; transition:color .2s ease;
+  }
+  .xm-tab.is-active{ color:var(--ink); }
+  .xm-tab-indicator{
+    position:absolute; bottom:-1.5px; left:0; height:3px; width:48px;
+    border-radius:3px;
+    background:linear-gradient(90deg, #CE007F, #EA5773, #DB3389, #6A388D, #2A2172, #4A2A82);
+    background-size:220% 100%;
+    animation:xmIndicatorShift 6s ease-in-out infinite;
+    transition:transform .35s cubic-bezier(.2,.8,.2,1), width .35s cubic-bezier(.2,.8,.2,1);
+  }
+  @keyframes xmIndicatorShift{
+    0%,100%{ background-position:0% 50%; }
+    50%{ background-position:100% 50%; }
+  }
+
+  .xm-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px;
+  }
+
+  .xm-empty{
+    display:none; text-align:center; color:var(--ink-soft); font-weight:600;
+    font-size:15px; padding:60px 0;
+  }
+  .xm-empty.is-visible{ display:block; }
+
+  .xm-card{
+    position:relative; border-radius:26px; overflow:hidden; cursor:pointer;
+    min-height:300px; padding:26px; display:flex; flex-direction:column; justify-content:space-between;
+    opacity:0; transform:translateY(24px) scale(.98);
+    transition:transform .25s ease, box-shadow .25s ease;
+    will-change:transform;
+  }
+  .xm-card:focus-visible{ outline:3px solid var(--ink); outline-offset:3px; }
+  .xm-card.is-visible{ animation:xmRise .6s cubic-bezier(.2,.8,.2,1) forwards; }
+  @keyframes xmRise{ to{ opacity:1; transform:translateY(0) scale(1); } }
+  .xm-card:hover{ box-shadow:0 28px 48px -20px rgba(22,19,25,.38); }
+
+  .xm-mark{
+    position:absolute; border-radius:44%; opacity:.35;
+    transition:transform .5s cubic-bezier(.2,.8,.2,1);
+  }
+  .xm-card:hover .xm-mark{ transform:rotate(18deg) scale(1.08); }
+
+  .xm-cover{
+    position:absolute; top:14px; right:14px; width:120px; height:120px;
+    display:flex; align-items:center; justify-content:center; z-index:1;
+    transition:transform .5s cubic-bezier(.2,.8,.2,1);
+  }
+  .xm-cover img{
+    width:100%; height:100%; object-fit:contain;
+    filter:drop-shadow(0 10px 18px rgba(0,0,0,.28));
+  }
+  .xm-card:hover .xm-cover{ transform:rotate(7deg) scale(1.1) translateY(-4px); }
+
+  .xm-badge{
+    align-self:flex-start; font-size:11px; font-weight:800; letter-spacing:.06em;
+    text-transform:uppercase; color:#fff; background:rgba(255,255,255,.22);
+    padding:6px 12px; border-radius:999px; position:relative; z-index:2;
+    backdrop-filter:blur(4px);
+  }
+
+  .xm-card h3{
+    position:relative; z-index:2; color:#fff; font-weight:800; font-size:22px;
+    line-height:1.15; margin:52px 0 0; letter-spacing:-.01em; max-width:75%;
+  }
+
+  .xm-foot{
+    position:relative; z-index:2; display:flex; align-items:center; justify-content:space-between;
+    margin-top:20px;
+  }
+  .xm-author{ display:flex; align-items:center; gap:8px; }
+  .xm-author img{
+    width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:1.5px solid rgba(255,255,255,.7);
+  }
+  .xm-author-text{ line-height:1.2; }
+  .xm-author-text small{ display:block; font-size:10px; color:rgba(255,255,255,.75); font-weight:600; }
+  .xm-author-text span{ display:block; font-size:12px; color:#fff; font-weight:700; }
+
+  .xm-arrow{
+    width:34px; height:34px; border-radius:50%; background:rgba(255,255,255,.2);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    transform:translateX(0) rotate(-45deg); transition:transform .3s ease, background .3s ease;
+  }
+  .xm-card:hover .xm-arrow{ transform:translateX(3px) rotate(0deg); background:#fff; }
+  .xm-arrow svg{ width:16px; height:16px; stroke:#fff; transition:stroke .3s ease; }
+  .xm-card:hover .xm-arrow svg{ stroke:var(--ink); }
+
+  @media (max-width:640px){
+    .xm{ padding:64px 16px 72px; }
+    .xm-cover{ width:96px; height:96px; }
+    .xm-card h3{ margin-top:44px; max-width:100%; }
+    .xm-decor-1, .xm-decor-2{ display:none; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .xm-card, .xm-mark, .xm-arrow, .xm-cover, .xm-news-card, .xm-news-clip, .xm-news-photo, .xm-tab-indicator{ transition:none; animation:none; }
+    .xm-card{ opacity:1; transform:none; box-shadow:0 22px 40px -20px rgba(22,19,25,.32); }
+    .xm-news-card{ opacity:1; transform:none; }
+    .xm-news-clip{ box-shadow:0 22px 40px -20px rgba(22,19,25,.32); }
+    .xm-decor-1, .xm-decor-2, .xm-shape{ animation:none; }
+    .xm-tab-indicator{ background:linear-gradient(90deg, #CE007F, #EA5773, #6A388D, #2A2172); background-size:100% 100%; }
+  }
+</style>
+
+<script>
+(function(){
+  var modules = [
+    { name:'Módulo de encuestas', cat:'mkt', tag:'Marketing', c:'purple', d:'purple-d',
+      url:'https://xpia.odoo.com/blog/marketing-7/modulo-de-encuestas-47',
+      img:'https://xpia.odoo.com/web/image/14033-90a4a958/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Encuestas%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Automatización de marketing', cat:'mkt', tag:'Marketing', c:'blue', d:'blue-d',
+      url:'https://xpia.odoo.com/blog/marketing-7/modulo-de-automatizacion-de-marketing-46',
+      img:'https://xpia.odoo.com/web/image/14038-4f27e836/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Automatizaci%C3%B3n%20de%20Marketing%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de eventos', cat:'mkt', tag:'Marketing', c:'coral', d:'coral-d',
+      url:'https://xpia.odoo.com/blog/marketing-7/modulo-de-eventos-45',
+      img:'https://xpia.odoo.com/web/image/14035-194a8b0e/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Eventos%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Marketing por SMS', cat:'mkt', tag:'Marketing', c:'amber', d:'amber-d',
+      url:'https://xpia.odoo.com/blog/marketing-7/marketing-por-sms-44',
+      img:'https://xpia.odoo.com/web/image/14036-38afa6f6/Publicaci%C3%B3n%20del%20blog%20%27Marketing%20por%20SMS%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Marketing por correo electrónico', cat:'mkt', tag:'Marketing', c:'teal', d:'teal-d',
+      url:'https://xpia.odoo.com/blog/marketing-7/modulo-de-marketing-por-correo-electronico-43',
+      img:'https://xpia.odoo.com/web/image/14039-1a85ca18/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Marketing%20Por%20Correo%20Electronico%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de marketing social', cat:'mkt', tag:'Marketing', c:'pink', d:'pink-d',
+      url:'https://xpia.odoo.com/blog/marketing-7/modulo-de-marketing-social-42',
+      img:'https://xpia.odoo.com/web/image/14041-536c80f6/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Marketing%20Social%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de flota', cat:'ops', tag:'Operaciones', c:'blue', d:'blue-d',
+      url:'https://xpia.odoo.com/blog/recursos-humanos-6/modulo-de-flota-41',
+      img:'https://xpia.odoo.com/web/image/14045-5507f710/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Flota%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de referencias', cat:'rh', tag:'Recursos humanos', c:'coral', d:'coral-d',
+      url:'https://xpia.odoo.com/blog/recursos-humanos-6/modulo-de-referencias-39',
+      img:'https://xpia.odoo.com/web/image/14046-d9336499/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Referencias%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de evaluación', cat:'rh', tag:'Recursos humanos', c:'amber', d:'amber-d',
+      url:'https://xpia.odoo.com/blog/recursos-humanos-6/modulo-de-evaluacion-38',
+      img:'https://xpia.odoo.com/web/image/14047-9b4b1947/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Evaluaci%C3%B3n%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de vacaciones', cat:'rh', tag:'Recursos humanos', c:'teal', d:'teal-d',
+      url:'https://xpia.odoo.com/blog/recursos-humanos-6/modulo-de-tiempo-personal-37',
+      img:'https://xpia.odoo.com/web/image/14051-97e4211c/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Tiempo%20Personal%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de reclutamiento', cat:'rh', tag:'Recursos humanos', c:'purple', d:'purple-d',
+      url:'https://xpia.odoo.com/blog/recursos-humanos-6/modulo-de-reclutamiento-34',
+      img:'https://xpia.odoo.com/web/image/14052-9abbe03b/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Reclutamiento%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de empleados', cat:'rh', tag:'Recursos humanos', c:'pink', d:'pink-d',
+      url:'https://xpia.odoo.com/blog/recursos-humanos-6/modulo-de-empleados-32',
+      img:'https://xpia.odoo.com/web/image/14053-666010e2/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Empleados%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de comercio electrónico', cat:'ventas', tag:'Ventas', c:'teal', d:'teal-d',
+      url:'https://xpia.odoo.com/blog/sitios-web-4/modulo-de-comercio-electronico-31',
+      img:'https://xpia.odoo.com/web/image/14060-74fdbcf2/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Comercio%20Electr%C3%B3nico%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de foro', cat:'mkt', tag:'Marketing', c:'blue', d:'blue-d',
+      url:'https://xpia.odoo.com/blog/sitios-web-4/modulo-de-foro-30',
+      img:'https://xpia.odoo.com/web/image/14061-8fe03e83/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Foro%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de chat en vivo', cat:'mkt', tag:'Marketing', c:'coral', d:'coral-d',
+      url:'https://xpia.odoo.com/blog/sitios-web-4/chat-en-vivo-29',
+      img:'https://xpia.odoo.com/web/image/14062-ff866936/Publicaci%C3%B3n%20del%20blog%20%27Chat%20en%20vivo%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de calidad', cat:'ops', tag:'Operaciones', c:'amber', d:'amber-d',
+      url:'https://xpia.odoo.com/blog/cadena-de-suministro-5/modulo-de-calidad-28',
+      img:'https://xpia.odoo.com/web/image/14063-b12c1bc5/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Calidad%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de mantenimiento', cat:'ops', tag:'Operaciones', c:'purple', d:'purple-d',
+      url:'https://xpia.odoo.com/blog/cadena-de-suministro-5/modulo-de-mantenimiento-27',
+      img:'https://xpia.odoo.com/web/image/14064-831af39b/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Mantenimiento%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de compra', cat:'ops', tag:'Operaciones', c:'pink', d:'pink-d',
+      url:'https://xpia.odoo.com/blog/cadena-de-suministro-5/modulo-de-compra-26',
+      img:'https://xpia.odoo.com/web/image/14065-9b92e5a3/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Compra%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de PLM', cat:'ops', tag:'Operaciones', c:'teal', d:'teal-d',
+      url:'https://xpia.odoo.com/blog/cadena-de-suministro-5/modulo-de-plm-25',
+      img:'https://xpia.odoo.com/web/image/14070-e677211c/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20PLM%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de fabricación', cat:'ops', tag:'Operaciones', c:'blue', d:'blue-d',
+      url:'https://xpia.odoo.com/blog/cadena-de-suministro-5/modulo-de-fabricacion-24',
+      img:'https://xpia.odoo.com/web/image/14067-6559ae14/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Fabricaci%C3%B3n%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de inventario', cat:'ops', tag:'Operaciones', c:'coral', d:'coral-d',
+      url:'https://xpia.odoo.com/blog/cadena-de-suministro-5/modulo-de-inventario-23',
+      img:'https://xpia.odoo.com/web/image/14069-36abf3c9/INVENTARIO.svg?height=256' },
+    { name:'Módulo de blog', cat:'mkt', tag:'Marketing', c:'amber', d:'amber-d',
+      url:'https://xpia.odoo.com/blog/sitios-web-4/modulo-de-blog-22',
+      img:'https://xpia.odoo.com/web/image/14075-5e6bcefa/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Blog%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de alquiler', cat:'ventas', tag:'Ventas', c:'purple', d:'purple-d',
+      url:'https://xpia.odoo.com/blog/finanzas-2/modulo-de-alquiler-19',
+      img:'https://xpia.odoo.com/web/image/14076-53259799/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Alquiler%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de suscripciones', cat:'ventas', tag:'Ventas', c:'pink', d:'pink-d',
+      url:'https://xpia.odoo.com/blog/ventas-3/modulo-de-suscripciones-18',
+      img:'https://xpia.odoo.com/web/image/14077-4c63e6bf/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Suscripciones%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de e-learning', cat:'mkt', tag:'Marketing', c:'teal', d:'teal-d',
+      url:'https://xpia.odoo.com/blog/sitios-web-4/modulo-de-e-learning-16',
+      img:'https://xpia.odoo.com/web/image/14084-40ef5e84/ELERNING.svg?height=256' },
+    { name:'Módulo de punto de venta', cat:'ventas', tag:'Ventas', c:'blue', d:'blue-d',
+      url:'https://xpia.odoo.com/blog/ventas-3/modulo-de-punto-de-venta-intuitivo-14',
+      img:'https://xpia.odoo.com/web/image/14087-a7b445c1/PUNTO%20DE%20VENTA.svg?height=256' },
+    { name:'Módulo de ventas', cat:'ventas', tag:'Ventas', c:'coral', d:'coral-d',
+      url:'https://xpia.odoo.com/blog/ventas-3/modulo-de-ventas-12',
+      img:'https://xpia.odoo.com/web/image/14091-4446d9d4/Publicaci%C3%B3n%20del%20blog%20%27M%C3%B3dulo%20de%20Ventas%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de CRM', cat:'ventas', tag:'Ventas', c:'amber', d:'amber-d',
+      url:'https://xpia.odoo.com/blog/ventas-3/modulo-de-cmr-11',
+      img:'https://xpia.odoo.com/web/image/14098-2e9db025/Publicaci%C3%B3n%20del%20blog%20%27M%C3%B3dulo%20de%20CMR%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de firmas', cat:'fin', tag:'Finanzas', c:'purple', d:'purple-d',
+      url:'https://xpia.odoo.com/blog/finanzas-2/modulo-de-firma-electronica-10',
+      img:'https://xpia.odoo.com/web/image/14099-4e24b8b3/Publicaci%C3%B3n%20del%20blog%20%27M%C3%B3dulo%20de%20Firma%20Electr%C3%B3nica%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de documentos', cat:'fin', tag:'Finanzas', c:'pink', d:'pink-d',
+      url:'https://xpia.odoo.com/blog/finanzas-2/modulo-de-documentos-9',
+      img:'https://xpia.odoo.com/web/image/14100-80cf3cd6/Publicaci%C3%B3n%20del%20blog%20%27M%C3%B3dulo%20de%20Documentos%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de contabilidad', cat:'fin', tag:'Finanzas', c:'teal', d:'teal-d',
+      url:'https://xpia.odoo.com/blog/finanzas-2/modulo-de-contabilidad-6',
+      img:'https://xpia.odoo.com/web/image/14101-da185239/Publicaci%C3%B3n%20del%20blog%20%27M%C3%B3dulo%20de%20Contabilidad%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de facturación', cat:'fin', tag:'Finanzas', c:'blue', d:'blue-d',
+      url:'https://xpia.odoo.com/blog/finanzas-2/modulo-de-facturacion-7',
+      img:'https://xpia.odoo.com/web/image/14102-12fc1449/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Facturaci%C3%B3n%27%20cover%20image.svg%2Bxml?height=256' },
+    { name:'Módulo de gastos', cat:'fin', tag:'Finanzas', c:'coral', d:'coral-d',
+      url:'https://xpia.odoo.com/blog/finanzas-2/modulo-de-gastos-8',
+      img:'https://xpia.odoo.com/web/image/14103-f78d7357/Publicaci%C3%B3n%20del%20blog%20%27Modulo%20de%20Gastos%27%20cover%20image.svg%2Bxml?height=256' }
+  ];
+
+  var AUTHOR_IMG = 'https://xpia.odoo.com/web/image/blog.post/3/author_avatar/C%C3%B3mo%20la%20inteligencia%20artificial%20est%C3%A1%20cambiando%20el%20mundo%20empresarial?unique=ec393e5';
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var news = [
+  {
+    title:'Cómo la inteligencia artificial está cambiando el mundo empresarial',
+    tag:'IA & Negocios',
+    c:'amber',
+    d:'amber-d',
+    url:'https://xpia.odoo.com/intelicencia-artificial-en-el-mundo-empresarial-con-xpia',
+    img:'https://xpia.odoo.com/web/image/14977-b64bc290/gemini-2.5-flash-image_quita_la_GE-0.jpg?height=256'
+  },
+  {
+    title:'La importancia de la transformación digital',
+    tag:'Estrategia',
+    c:'blue',
+    d:'blue-d',
+    url:'https://xpia.odoo.com/tranformacion-digital-despues-de-pandemia',
+    img:'https://xpia.odoo.com/web/image/14978-699c8e50/ChatGPT%20Image%2014%20ago%202026%2C%2010_12_53%20p.m..png?height=256'
+  },
+  {
+    title:'5 formas de gestionar tu empresa',
+    tag:'Gestión',
+    c:'coral',
+    d:'coral-d',
+    url:'https://xpia.odoo.com/5-maneras-de-gestionar-tu-empresa',
+    img:'https://xpia.odoo.com/web/image/14981-d6ba3467/6fc54cab-a4c0-4501-b946-9da86f84b7d1.png?height=256'
+  },
+  {
+    title:'¿Sabes qué es Odoo?',
+    tag:'Odoo',
+    c:'teal',
+    d:'teal-d',
+    url:'https://xpia.odoo.com/sabes-que-es-odoo',
+    img:'https://xpia.odoo.com/web/image/14982-135b4e9e/950ea248-7aa3-48bf-a52b-2284168be122.png'
+  },
+  {
+    title:'Transformación digital',
+    tag:'Estrategia',
+    c:'purple',
+    d:'purple-d',
+    url:'https://xpia.odoo.com/la-era-digital',
+    img:'https://xpia.odoo.com/web/image/14980-ba1c296b/0d14b57a-a196-4f0a-8cbe-c70bc37c655c.png?height=256'
+  }
+];
+  var PALETTE = {
+    purple:{ base:'#4A2A82', dark:'#2E1857' },
+    teal:{ base:'#6A388D', dark:'#472563' },
+    coral:{ base:'#EA5773', dark:'#C93A56' },
+    amber:{ base:'#CE007F', dark:'#970A5D' },
+    blue:{ base:'#2A2172', dark:'#17123F' },
+    pink:{ base:'#DB3389', dark:'#A80F63' }
+  };
+
+  var newsTrack = document.getElementById('xmNewsTrack');
+  news.forEach(function(n, i){
+    var card = document.createElement('div');
+    card.className = 'xm-news-card';
+    card.style.transitionDelay = (i * 0.05) + 's';
+    card.style.marginTop = (i % 2 === 0 ? '0px' : '58px');
+    var dark = PALETTE[n.c].dark;
+    card.style.background = PALETTE[n.c].base;
+    card.setAttribute('role', 'link');
+    card.setAttribute('tabindex', '0');
+    card.innerHTML =
+      '<div class="xm-news-clip">' +
+        '<div class="xm-news-photo" style="background-image:url(\'' + n.img + '\')"></div>' +
+        '<div class="xm-news-overlay" style="background:linear-gradient(178deg, ' + dark + '4d 0%, ' + dark + '99 55%, ' + dark + 'e0 100%)"></div>' +
+      '</div>' +
+      '<span class="xm-news-badge">Blog</span>' +
+      '<p class="xm-news-title">' + n.title + '</p>' +
+      '<span class="xm-news-tag">' + n.tag + '</span>' +
+      '<div class="xm-news-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>';
+
+    if (!reduceMotion){
+      card.addEventListener('mousemove', function(e){
+        var r = card.getBoundingClientRect();
+        var rx = ((e.clientY - r.top) / r.height - 0.5) * -5;
+        var ry = ((e.clientX - r.left) / r.width - 0.5) * 5;
+        card.style.transform = 'perspective(800px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-6px)';
+      });
+      card.addEventListener('mouseleave', function(){
+        card.style.transform = '';
+      });
+    }
+
+    if (n.url){
+      card.addEventListener('click', function(){
+        window.open(n.url, '_blank', 'noopener');
+      });
+      card.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          window.open(n.url, '_blank', 'noopener');
+        }
+      });
+    }
+
+    newsTrack.appendChild(card);
+
+    var newsObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          newsObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    newsObs.observe(card);
+  });
+
+  var grid = document.getElementById('xmGrid');
+  var tabs = document.getElementById('xmTabs');
+  var indicator = tabs.querySelector('.xm-tab-indicator');
+  var pager = document.getElementById('xmPager');
+  var emptyMsg = document.getElementById('xmEmpty');
+  var searchInput = document.getElementById('xmSearch');
+
+  var currentCat = 'todos';
+  var currentQuery = '';
+
+  function moveIndicator(btn){
+    indicator.style.width = btn.offsetWidth + 'px';
+    indicator.style.transform = 'translateX(' + btn.offsetLeft + 'px)';
+  }
+
+  function getFiltered(){
+    var list = currentCat === 'todos' ? modules : modules.filter(function(m){ return m.cat === currentCat; });
+    if (currentQuery.trim() !== ''){
+      var q = currentQuery.trim().toLowerCase();
+      list = list.filter(function(m){ return m.name.toLowerCase().indexOf(q) !== -1; });
+    }
+    return list;
+  }
+
+  function render(){
+    var list = getFiltered();
+    grid.innerHTML = '';
+    pager.innerHTML = String(list.length).padStart(2,'0') + ' <em>/ ' + String(modules.length).padStart(2,'0') + '</em>';
+    emptyMsg.classList.toggle('is-visible', list.length === 0);
+
+    list.forEach(function(m, i){
+      var card = document.createElement('div');
+      card.className = 'xm-card';
+      card.style.background = 'var(--' + m.c + ')';
+      card.style.transitionDelay = (i * 0.04) + 's';
+      card.setAttribute('role', 'link');
+      card.setAttribute('tabindex', '0');
+      card.innerHTML =
+        '<div class="xm-mark" style="width:150px;height:150px;background:var(--' + m.d + ');bottom:-40px;left:-30px;"></div>' +
+        '<div class="xm-cover"><img src="' + m.img + '" alt="' + m.name + '" loading="lazy"></div>' +
+        '<span class="xm-badge">' + m.tag + '</span>' +
+        '<h3>' + m.name + '</h3>' +
+        '<div class="xm-foot">' +
+          '<div class="xm-author">' +
+            '<img src="' + AUTHOR_IMG + '" alt="Nahúm Pérez Campos" loading="lazy">' +
+            '<div class="xm-author-text"><small>Hecho por</small><span>Nahúm Pérez Campos</span></div>' +
+          '</div>' +
+          '<div class="xm-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>' +
+        '</div>';
+
+      if (!reduceMotion){
+        card.addEventListener('mousemove', function(e){
+          var r = card.getBoundingClientRect();
+          var rx = ((e.clientY - r.top) / r.height - 0.5) * -6;
+          var ry = ((e.clientX - r.left) / r.width - 0.5) * 6;
+          card.style.transform = 'perspective(700px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-6px)';
+        });
+        card.addEventListener('mouseleave', function(){
+          card.style.transform = '';
+        });
+      }
+
+      if (m.url){
+        card.addEventListener('click', function(){
+          window.open(m.url, '_blank', 'noopener');
+        });
+        card.addEventListener('keydown', function(e){
+          if (e.key === 'Enter' || e.key === ' '){
+            e.preventDefault();
+            window.open(m.url, '_blank', 'noopener');
+          }
+        });
+      }
+
+      grid.appendChild(card);
+
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting){
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      obs.observe(card);
+    });
+  }
+
+  render();
+
+  tabs.addEventListener('click', function(e){
+    var btn = e.target.closest('.xm-tab');
+    if (!btn) return;
+    tabs.querySelectorAll('.xm-tab').forEach(function(b){ b.classList.remove('is-active'); });
+    btn.classList.add('is-active');
+    moveIndicator(btn);
+    currentCat = btn.getAttribute('data-cat');
+    render();
+  });
+
+  searchInput.addEventListener('input', function(e){
+    currentQuery = e.target.value;
+    render();
+  });
+
+  window.addEventListener('load', function(){
+    moveIndicator(tabs.querySelector('.xm-tab.is-active'));
+  });
+  moveIndicator(tabs.querySelector('.xm-tab.is-active'));
+})();
+</script>

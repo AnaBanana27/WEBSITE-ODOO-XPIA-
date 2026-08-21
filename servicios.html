@@ -1,0 +1,1397 @@
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <title>XPIA · Servicios de Transformación Digital</title>
+
+  
+  <meta name="description" content="Transformación digital a tu alcance y a tu medida. Implementación y administración de Odoo ERP, soluciones de IA, consultoría y soporte en todo México.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://xpiatech.com/servicios">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+  
+  <meta name="theme-color" content="#CE007F">
+
+  
+  <meta property="og:title" content="XPIA · Servicios de Transformación Digital">
+  <meta property="og:description" content="Implementación y administración de Odoo ERP, soluciones de IA, consultoría y soporte tecnológico en México.">
+  <meta property="og:image" content="https://xpiatech.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://xpiatech.com/servicios">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="XPIA · Servicios de Transformación Digital">
+  <meta name="twitter:description" content="Implementación y administración de Odoo ERP, soluciones de IA, consultoría y soporte tecnológico en México.">
+  <meta name="twitter:image" content="https://xpiatech.com/og-image.jpg">
+  <meta name="twitter:site" content="@xpiatech">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "XPIA Technology Solutions",
+    "url": "https://xpiatech.com",
+    "logo": "https://xpiatech.com/logo.png",
+    "description": "Transformación digital a tu alcance y a tu medida. Implementación y administración de Odoo ERP, soluciones de IA, consultoría y soporte en todo México.",
+    "address": [
+      {"@type": "PostalAddress", "addressLocality": "Colima", "addressCountry": "MX"},
+      {"@type": "PostalAddress", "addressLocality": "Ciudad de México", "addressCountry": "MX"}
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+52-312-410-0035",
+      "contactType": "sales",
+      "availableLanguage": ["es", "en"]
+    },
+    "sameAs": ["https://wa.me/5213124100035"]
+  }
+  </script>
+
+  <style>
+  /* ─── Fuente tipográfica (cargada con display=swap para evitar parpadeo) ─── */
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap');
+
+  /*
+    ═══════════════════════════════════════════════════
+    SISTEMA DE DISEÑO — XPIA ELEVATE
+    ═══════════════════════════════════════════════════
+
+    Todas las reglas están namespaced bajo .xpia-elevate
+    para evitar conflictos con el CSS de Odoo.
+
+    Tipografía: Montserrat en toda la página.
+      - Títulos (h1, h2, h3, h4, números destacados) → peso 900 (Black / "gordita")
+      - Textos de cuerpo (p, li, texto general)        → peso 300 (Light / "delgada")
+
+    Variables de color:
+      --acc  = magenta (principal)
+      --pur  = morado oscuro
+      --pur-l = morado claro
+      --ink  = texto negro
+      --body = texto gris
+      --muted = texto gris claro
+      --line = bordes
+      --soft = fondo gris claro
+  */
+  .xpia-elevate{
+  /* ─── Colores de marca ─── */
+  --acc:#CE007F; --acc-d:#b00069;   /* magenta (principal) + hover oscuro */
+  --pur:#2A2172; --pur-l:#6A388D;  /* morado oscuro + claro */
+  --rose:#EA5773;                   /* rosa de acento (gradientes) */
+  --ink:#0E0E12;                    /* texto casi negro */
+  --body:#41414C; --muted:#6F6F7B; /* texto gris */
+  --line:#EAEAEF; --soft:#F7F6FA;  /* bordes + fondos suaves */
+  --font:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-bold-w:900;   /* "gordita" — para todos los títulos */
+  --font-thin-w:300;   /* "delgada" — para todos los textos de cuerpo */
+  background:#fff;color:var(--ink);font-family:var(--font);font-weight:var(--font-thin-w);
+  -webkit-font-smoothing:antialiased;line-height:1.5;
+}
+/* ─── Reset mínimo (box-sizing, enlaces, imágenes) ─── */
+.xpia-elevate *{box-sizing:border-box;}
+.xpia-elevate a{color:inherit;text-decoration:none;}
+.xpia-elevate img{max-width:100%;display:block;}
+/* ─── Tipografía global: gordita para títulos, delgada para texto ─── */
+.xpia-elevate p,.xpia-elevate li,.xpia-elevate span,.xpia-elevate a,.xpia-elevate button,.xpia-elevate input{font-family:var(--font);font-weight:var(--font-thin-w);}
+.xpia-elevate h1,.xpia-elevate h2,.xpia-elevate h3,.xpia-elevate h4,.xpia-elevate h5,.xpia-elevate h6{font-family:var(--font);font-weight:var(--font-bold-w);letter-spacing:-.02em;}
+/* ─── Contenedor central — 1200px de ancho máximo ─── */
+.xpia-elevate .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,48px);}
+
+/* ─── Botones ───
+  .btn       → primario (magenta)
+  .btn.ghost → outline (blanco con borde)
+*/
+.xpia-elevate .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;color:#fff;background:var(--acc);padding:14px 26px;border-radius:999px;border:none;cursor:pointer;transition:background .2s ease, transform .2s ease;}
+.xpia-elevate .btn:hover{background:var(--acc-d);transform:translateY(-1px);}
+.xpia-elevate .btn svg{width:17px;height:17px;}
+.xpia-elevate .btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line);}
+.xpia-elevate .btn.ghost:hover{background:var(--soft);}
+
+/* ─── Eyebrow (etiqueta superior) ───
+  Pequeño badge que aparece encima de los títulos de sección.
+  .ic → círculo con icono dentro.
+*/
+.xpia-elevate .eyebrow{display:inline-flex;align-items:center;gap:11px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 18px 7px 7px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 1px 2px rgba(16,16,20,.04);}
+.xpia-elevate .eyebrow .ic{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--acc);color:#fff;flex:none;}
+.xpia-elevate .eyebrow .ic svg{width:14px;height:14px;}
+
+/* ─── Cabecera de sección ───
+  Título (h2) + subtítulo (p) centrados, usados en todas las secciones.
+*/
+.xpia-elevate .sec-head{text-align:center;max-width:760px;margin:0 auto 56px;}
+.xpia-elevate .sec-head h2{font-weight:var(--font-bold-w);font-size:clamp(32px,4.2vw,52px);line-height:1.06;letter-spacing:-.025em;margin:20px 0 0;}
+.xpia-elevate .sec-head p{font-weight:var(--font-thin-w);font-size:clamp(16px,1.2vw,18px);color:var(--body);margin:18px auto 0;max-width:600px;}
+
+/* ─── Logo XPIÁ ───
+  Marca visual hecha con dos círculos superpuestos:
+  uno magenta (izquierda) y uno morado (derecha) con blend-mode.
+*/
+.xpia-elevate .logo{display:flex;align-items:center;gap:10px;font-weight:var(--font-bold-w);font-size:22px;letter-spacing:-.02em;}
+.xpia-elevate .logo .mark{position:relative;width:34px;height:22px;flex:none;}
+.xpia-elevate .logo .mark span{position:absolute;top:0;width:22px;height:22px;border-radius:50%;}
+.xpia-elevate .logo .mark span:first-child{left:0;background:var(--acc);}
+.xpia-elevate .logo .mark span:last-child{right:0;background:var(--pur-l);mix-blend-mode:multiply;}
+
+/* ─── Hero (split layout) ───
+  Layout de dos columnas: texto (izquierda) + imagen abstracta (derecha).
+  Debajo: mapa de categorías en grid de 4.
+*/
+.xpia-elevate .hero{padding:clamp(48px,6vw,88px) 0 clamp(32px,4vw,48px);}
+.xpia-elevate .hero-split{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(32px,5vw,72px);align-items:center;}
+.xpia-elevate .hero-text{text-align:left;}
+.xpia-elevate .hero-text h1{
+  font-weight:var(--font-bold-w);
+  font-size:clamp(38px,5.5vw,66px);
+  line-height:1.03;
+  letter-spacing:-.03em;
+  margin:24px 0 0;
+  max-width:14ch;
+  /* ─── Título animado: degradado en movimiento con los 4 colores de marca ─── */
+  background-image:linear-gradient(100deg,#6A388D 0%,#CE007F 28%,#EA5773 52%,#2A2172 76%,#6A388D 100%);
+  background-size:300% 100%;
+  background-position:0% 50%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  color:#2A2172; /* fallback si background-clip:text no es soportado */
+  animation:heroTitleGradient 9s ease-in-out infinite;
+}
+.xpia-elevate .hero-text p{font-weight:var(--font-thin-w);font-size:clamp(16px,1.3vw,19px);color:var(--body);margin:22px 0 0;max-width:50ch;}
+.xpia-elevate .hero-text .actions{display:flex;gap:12px;justify-content:flex-start;margin-top:32px;flex-wrap:wrap;}
+/* Ilustración SVG del hero */
+.xpia-elevate .hero-visual{display:grid;place-items:center;}
+.xpia-elevate .hero-visual svg{width:100%;height:auto;max-width:480px;}
+
+/* ─── Animación del título del hero ─── */
+@keyframes heroTitleGradient{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* ─── Animaciones del SVG del hero ───
+   GPU-accelerated (transform + opacity). Sin dependencias externas.
+   Desactivadas con prefers-reduced-motion.
+*/
+/* ─── D: Sincronización rítmica ───
+   Todo alinea con un pulso base de 4s.
+   - Orbe late en 4s (takt)
+   - Onda expansiva cada 4s (coincide con el latido)
+   - Nodos flotan en 8s (2 pulsos)
+   - Órbita completa en 16s (4 pulsos)
+   - Partículas en 8s (2 pulsos)
+   El cerebro percibe armonía sin notar la mecánica.
+*/
+/* ─── A: Curvas de easing orgánicas ───
+   --orb-ease → aceleración/desaceleración natural (órbitas, respiración)
+   --bounce-ease → micro-rebote al final (flotación, latido)
+   --ripple-ease → suave inicio/desvanecimiento (ondas)
+*/
+:root{--orb-ease:cubic-bezier(.45,.05,.55,.95);--bounce-ease:cubic-bezier(.34,1.56,.64,1);--ripple-ease:cubic-bezier(.25,.46,.45,.94)}
+html{scroll-behavior:smooth;}
+@keyframes heroPulse{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.3;transform:scale(1.06)}}
+@keyframes heroSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+@keyframes heroOrbPulse{0%,100%{transform:scale(1);opacity:.15}50%{transform:scale(1.18);opacity:.3}}
+@keyframes heroNodeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes heroLinesIn{0%{opacity:0}100%{opacity:.25}}
+@keyframes heroPulseWave{0%{transform:scale(1);opacity:.35}100%{transform:scale(6.5);opacity:0}}
+@keyframes heroOrbit{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+@keyframes heroDataFlow{0%{stroke-dashoffset:100}100%{stroke-dashoffset:0}}
+@keyframes heroParticle{0%,100%{transform:translate(0,0);opacity:.12}50%{transform:translate(10px,-12px);opacity:.35}}
+
+/* D + A */
+.hero-glow{animation:heroPulse 4s var(--orb-ease) infinite;transform-origin:50% 50%;}
+.hero-dotted{animation:heroSpin 16s linear infinite;transform-origin:50% 50%;}
+/* ─── Foto circular del hero (reemplaza el orbe) ───
+   La imagen respira suavemente (escala) y su tinte morado (mix-blend-mode)
+   pulsa junto con el anillo exterior — mismo lenguaje de movimiento que el resto del hero.
+*/
+@keyframes heroPhotoBreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+@keyframes heroPhotoAura{
+  0%{filter:drop-shadow(0 0 22px rgba(206,0,127,.55))}
+  25%{filter:drop-shadow(0 0 28px rgba(106,56,141,.55))}
+  50%{filter:drop-shadow(0 0 28px rgba(234,87,115,.5))}
+  75%{filter:drop-shadow(0 0 24px rgba(42,33,114,.55))}
+  100%{filter:drop-shadow(0 0 22px rgba(206,0,127,.55))}
+}
+.hero-photo-group{transform-box:fill-box;transform-origin:center;animation:heroPhotoBreathe 6s var(--bounce-ease) infinite, heroPhotoAura 10s ease-in-out infinite;}
+.hero-photo-img{transform-box:fill-box;transform-origin:center;}
+.hero-photo-ring{transform-box:fill-box;transform-origin:center;animation:heroSpin 22s linear infinite;}
+.xpia-elevate .hero-visual:hover .hero-photo-group{animation-duration:3s,10s;}
+.xpia-elevate .hero-visual:hover .hero-photo-ring{animation-duration:9s;}
+.hero-nodes .node{animation:heroNodeFloat 8s var(--bounce-ease) infinite;}
+.hero-nodes .node-2{animation-delay:1.6s;}
+.hero-nodes .node-3{animation-delay:3.2s;}
+.hero-nodes .node-4{animation-delay:4.8s;}
+.hero-nodes .node-5{animation-delay:6.4s;}
+.hero-lines{animation:heroLinesIn 1.2s var(--ripple-ease) .6s both;}
+.hero-pulse-wave{animation:heroPulseWave 4s var(--ripple-ease) infinite;transform-origin:50% 50%;}
+.hero-pulse-wave-2{animation:heroPulseWave 4s var(--ripple-ease) infinite;transform-origin:50% 50%;animation-delay:2s;}
+.hero-orbit{animation:heroOrbit 16s var(--orb-ease) infinite;transform-origin:50% 50%;}
+.hero-data-flow path{animation:heroDataFlow 2s linear infinite;}
+.hero-particles .particle{animation:heroParticle 8s var(--bounce-ease) infinite;}
+.hero-particles .pt2{animation-delay:1.33s;}
+.hero-particles .pt3{animation-delay:2.67s;}
+.hero-particles .pt4{animation-delay:4s;}
+.hero-particles .pt5{animation-delay:5.33s;}
+
+.hero-particles .pt6{animation-delay:6.67s;}
+
+/* ─── C: Micro-interacción hover ───
+   Al pasar el mouse sobre la ilustración SVG:
+   - Órbitas aceleran (16s → 6s)
+   - Anillo punteado acelera (16s → 8s)
+   - Líneas y flujo de datos se iluminan
+   - Nodos se iluminan (opacidad +0.4)
+   Sensación orgánica: la ilustración responde a la presencia del usuario.
+*/
+.xpia-elevate .hero-visual:hover .hero-orbit{animation-duration:6s;}
+.xpia-elevate .hero-visual:hover .hero-dotted{animation-duration:8s;}
+.xpia-elevate .hero-visual:hover .hero-lines{opacity:.5!important;}
+.xpia-elevate .hero-visual:hover .hero-data-flow{opacity:.7;}
+.xpia-elevate .hero-visual:hover .hero-nodes .node{opacity:.95;}
+.xpia-elevate .hero-visual:hover .hero-pulse-wave{animation-duration:2.5s;}
+.xpia-elevate .hero-visual:hover .hero-pulse-wave-2{animation-duration:2.5s;}
+
+/* ─── Mapa de categorías ───
+  Cuadrícula de 4 columnas con enlaces a cada familia de servicios.
+  Cada celda tiene número, nombre + flecha.
+  Padding y fuente ligeramente más grandes que antes para mejor presencia.
+*/
+.xpia-elevate .map{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,22px);margin-top:clamp(40px,5vw,56px);text-align:left;}
+.xpia-elevate .map a{display:flex;align-items:center;gap:16px;border:1px solid var(--line);border-radius:18px;padding:clamp(22px,3vw,32px) clamp(24px,3vw,34px);background:#fff;font-weight:600;font-size:clamp(15px,1.2vw,17px);transition:border-color .2s,box-shadow .2s,transform .2s;}
+.xpia-elevate .map a:hover{border-color:#dcdce4;box-shadow:0 16px 36px -22px rgba(14,14,18,.35);transform:translateY(-2px);}
+.xpia-elevate .map a .n{font-weight:var(--font-bold-w);color:var(--acc);font-size:clamp(15px,1.1vw,17px);flex:none;}
+.xpia-elevate .map a .lbl{flex:1;line-height:1.3;}
+.xpia-elevate .map a .ar{margin-left:auto;color:var(--muted);flex:none;}
+.xpia-elevate .map a .ar svg{width:18px;height:18px;}
+
+/* ─── Sección genérica ───
+  .section    → contenedor con padding vertical
+  .section.alt → fondo gris claro (soft)
+*/
+.xpia-elevate .section{padding:clamp(56px,7vw,100px) 0;}
+.xpia-elevate .section.alt{background:var(--soft);}
+
+/* ─── Bento Grid (servicios destacados) ───
+  Grid de 3 columnas con tarjetas de tamaño variable.
+  .b-lg   → ocupa 2 columnas × 2 filas
+  .feat   → tarjeta destacada (fondo morado)
+  .ia     → tarjeta de IA (borde magenta superior + hover)
+*/
+.xpia-elevate .bento{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2vw,24px);grid-auto-rows:minmax(158px,auto);}
+.xpia-elevate .bento .card{display:flex;flex-direction:column;cursor:pointer;}
+.xpia-elevate .bento .card .cic{width:34px;height:34px;border-radius:0;background:none;color:var(--pur-l);margin-bottom:auto;display:block;}
+.xpia-elevate .bento .card .cic svg{width:32px;height:32px;}
+.xpia-elevate .bento .card.feat .cic{background:none;color:#fff;}
+.xpia-elevate .bento .card.ia .cic{background:none;color:var(--acc);}
+.xpia-elevate .bento .card h3{margin-top:22px;}
+.xpia-elevate .b-lg{grid-column:span 2;grid-row:span 2;}
+
+/* ─── Card destacada (.feat) — SVG animado ───
+   Fondo SVG inline con coreografía de 12 elementos animados
+   que despliegan en cascada secuencial:
+
+   1. fb-draw  (2s)   → curva principal se dibuja
+   2. fb-draw2 (1.8s) → segunda curva cruza desde la izquierda
+   3. fb-dash-move     → línea punteada paralela "creeping"
+   4. fb-fade + fb-pulse-glow → glow aparece y late
+   5. fb-dot           → punto final pulsa (escala + opacidad)
+   6. fb-ring ×2       → anillos expansivos desde el punto final
+   7. fb-travel        → punto brillante recorre la curva (loop)
+   8. fb-origin-pulse  → glow pulsante en el origen
+   9. fb-float ×4      → partículas flotan hacia arriba
+   10. fb-breathe      → SVG completo respira suavemente
+
+   Todas se desactivan con prefers-reduced-motion.
+   transform-box:fill-box + transform-origin:center asegura
+   transforms consistentes en viewBox SVG (especialmente móvil).
+*/
+.xpia-elevate .card.feat{background:var(--pur);border-color:var(--pur);color:#fff;position:relative;overflow:hidden;}
+/* ─── Foto de fondo del recuadro destacado — propuesta 3 ───
+   La foto se deja casi natural (solo un poco más oscura para que el
+   texto blanco resalte) — nada de duotono ni velo de color encima,
+   así se aprecia de verdad. El toque de marca vive en un destello
+   diagonal con los 4 colores que se desliza lentamente sobre la foto
+   (mix-blend-mode:overlay, muy sutil) y en la viñeta inferior, solo
+   para legibilidad del texto. La animación SVG existente (fb-*) sigue
+   encima con mix-blend-mode:screen.
+*/
+@keyframes fb-photo-zoom{0%,100%{transform:scale(1.02)}50%{transform:scale(1.07)}}
+@keyframes fb-shine-sweep{0%,100%{background-position:130% -30%;}50%{background-position:-30% 130%;}}
+.xpia-elevate .card.feat .feat-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;pointer-events:none;z-index:0;filter:saturate(.92) contrast(1.05) brightness(.82);animation:fb-photo-zoom 20s ease-in-out infinite;}
+.xpia-elevate .card.feat .feat-photo-shine{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;background:linear-gradient(115deg, transparent 22%, rgba(234,87,115,.55) 38%, rgba(206,0,127,.6) 48%, rgba(106,56,141,.55) 58%, transparent 74%);background-size:260% 260%;background-position:130% -30%;mix-blend-mode:overlay;opacity:.6;animation:fb-shine-sweep 7s ease-in-out infinite;}
+.xpia-elevate .card.feat .feat-photo-tint{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;background:linear-gradient(0deg,rgba(10,7,26,.72) 0%,rgba(10,7,26,.2) 36%,rgba(10,7,26,0) 58%);}
+.xpia-elevate .card.feat .feat-bg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;mix-blend-mode:screen;}
+.xpia-elevate .card.feat .feat-bg~*{position:relative;z-index:1;}
+.xpia-elevate .card.feat .fb-curve{stroke-dasharray:2000;stroke-dashoffset:2000;animation:fb-draw 2s ease forwards;}
+.xpia-elevate .card.feat .fb-curve2{stroke-dasharray:1200;stroke-dashoffset:1200;animation:fb-draw2 1.8s ease .5s forwards;}
+.xpia-elevate .card.feat .fb-glow{opacity:0;animation:fb-fade 1.2s ease 1.6s forwards, fb-pulse-glow 4s ease-in-out infinite 2.8s;}
+.xpia-elevate .card.feat .fb-pulse{animation:fb-dot 2.5s ease-in-out infinite 2.4s;transform-box:fill-box;transform-origin:center;}
+.xpia-elevate .card.feat .fb-traveler{stroke-dasharray:0.1 2000;stroke-dashoffset:2000;animation:fb-travel 3s linear infinite 2s;}
+.xpia-elevate .card.feat .fb-origin{animation:fb-origin-pulse 4s ease-in-out infinite 1.5s;transform-box:fill-box;transform-origin:center;}
+.xpia-elevate .card.feat .fb-ripple{animation:fb-ring 3s ease-out infinite 3s;transform-box:fill-box;transform-origin:center;}
+.xpia-elevate .card.feat .fb-ripple2{animation:fb-ring 3s ease-out infinite 4.5s;transform-box:fill-box;transform-origin:center;}
+.xpia-elevate .card.feat .fb-dash{stroke-dasharray:5 9;animation:fb-dash-move .7s linear infinite 1.8s;}
+.xpia-elevate .card.feat .fb-p2{animation:fb-float 5s ease-in-out infinite 2s;transform-box:fill-box;transform-origin:center;}
+.xpia-elevate .card.feat .fb-p3{animation:fb-float 6s ease-in-out infinite 3.5s;transform-box:fill-box;transform-origin:center;}
+.xpia-elevate .card.feat .fb-p4{animation:fb-float 4.5s ease-in-out infinite 4s;transform-box:fill-box;transform-origin:center;}
+.xpia-elevate .card.feat .fb-p5{animation:fb-float 5.5s ease-in-out infinite 1s;transform-box:fill-box;transform-origin:center;}
+.xpia-elevate .card.feat .feat-bg{animation:fb-breathe 5s ease-in-out infinite;}
+@keyframes fb-draw{to{stroke-dashoffset:0}}           /* curva principal se dibuja (one-shot) */
+@keyframes fb-draw2{to{stroke-dashoffset:0}}          /* segunda curva se dibuja con retraso */
+@keyframes fb-fade{to{opacity:0.8}}                   /* glow aparece gradualmente */
+@keyframes fb-pulse-glow{0%,100%{opacity:.35}50%{opacity:.85}}  /* glow late */
+@keyframes fb-dash-move{to{stroke-dashoffset:14}}     /* línea punteada avanza */
+@keyframes fb-dot{0%,100%{opacity:.2;transform:scale(1)}50%{opacity:1;transform:scale(2.5)}}  /* punto final late */
+@keyframes fb-ring{0%{opacity:.6;transform:scale(1)}100%{opacity:0;transform:scale(4)}}       /* anillo expansivo */
+@keyframes fb-float{0%,100%{transform:translateY(0) scale(1);opacity:.25}50%{transform:translateY(-18px) scale(1.3);opacity:.6}}  /* partículas flotan */
+@keyframes fb-travel{to{stroke-dashoffset:0}}         /* viajero recorre la curva */
+@keyframes fb-origin-pulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:.7;transform:scale(1.3)}}  /* glow origen late */
+@keyframes fb-breathe{0%,100%{opacity:.65}50%{opacity:1}}  /* SVG respira */
+.xpia-elevate .card.feat .cic{background:rgba(255,255,255,.16);}
+.xpia-elevate .card.feat h3{color:#fff;font-size:clamp(22px,2.4vw,30px);}
+.xpia-elevate .card.feat p{color:rgba(255,255,255,.82);}
+.xpia-elevate .card.feat .tag{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:8px;}
+.xpia-elevate .card.ia{border-top:3px solid var(--acc);}
+.xpia-elevate .card.ia .go{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:14px;color:var(--acc);margin-top:14px;transition:color .2s;}
+.xpia-elevate .card.ia .go svg{width:16px;height:16px;transition:transform .2s;}
+.xpia-elevate .card.ia:hover .go svg{transform:translateX(4px);}
+.xpia-elevate .bento .card .bi{align-self:flex-end;margin-top:auto;padding-top:12px;color:var(--acc);transition:color .2s;}
+.xpia-elevate .bento .card .bi svg{display:block;width:20px;height:20px;transition:transform .35s ease;}
+.xpia-elevate .bento .card.expanded .bi svg{transform:rotate(180deg);}
+
+/* ─── Expandible inline (todas las cards) ───
+  .extra   → contenido oculto que se revela al hacer clic
+  .expanded → estado activo en la card
+  El .go (IA card) rota su flecha al expandir.
+*/
+.xpia-elevate .card .extra{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease,margin .4s,padding .4s;margin-top:0;padding-top:0;}
+.xpia-elevate .card .extra>ul{overflow:hidden;min-height:0;}
+.xpia-elevate .card .extra ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
+.xpia-elevate .card .extra ul li{font-size:14px;color:var(--body);line-height:1.45;padding-left:14px;border-left:2px solid var(--acc);}
+.xpia-elevate .card .extra .btn{margin-top:16px;}
+.xpia-elevate .card.expanded .extra{grid-template-rows:1fr;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);}
+.xpia-elevate .card.ia.expanded .go{color:var(--muted);}
+.xpia-elevate .card.ia.expanded .go svg{transform:rotate(90deg);}
+
+/* ─── Expandible en catálogo ───
+  Diferente al bento:
+  - Trigger via "Ver más" (no clic en toda la card)
+  - Animación fade + slide-up (max-height + opacity)
+  - Fondo suave al expandirse
+  - Borde izquierdo morado claro
+*/
+.xpia-elevate .card .more{background:none;border:none;padding:0;font:inherit;display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:14px;color:var(--acc);margin-top:16px;cursor:pointer;transition:color .2s;}
+.xpia-elevate .card .more svg{width:16px;height:16px;transition:transform .3s;}
+.xpia-elevate .card.expanded .more{color:var(--muted);}
+.xpia-elevate .card.expanded .more svg{transform:rotate(180deg);}
+.xpia-elevate .section.alt .card .extra{display:block;max-height:0;overflow:hidden;transform:scaleX(0.92) translateY(6px);transform-origin:left center;opacity:0;background:var(--soft);border-radius:16px;margin:0;padding:0 clamp(20px,2vw,28px);transition:max-height .45s ease, transform .45s ease, opacity .45s ease, margin .45s, padding .45s;}
+.xpia-elevate .section.alt .card .extra>ul{overflow:visible;}
+.xpia-elevate .section.alt .card.expanded .extra{max-height:600px;transform:scaleX(1) translateY(0);opacity:1;padding:clamp(16px,2vw,24px) clamp(20px,2vw,28px);margin-top:20px;}
+.xpia-elevate .section.alt .card .extra ul li{border-left-color:var(--pur-l);}
+
+/* ─── Tarjetas de catálogo ───
+  Grid de 2 columnas (.cards) o 3 columnas (.cards.c3).
+  Cada .card es un contenedor blanco con borde, sombra en hover.
+  .cic → círculo con icono.
+*/
+.xpia-elevate .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,2vw,26px);}
+.xpia-elevate .cards.c3{grid-template-columns:repeat(3,minmax(0,1fr));}
+.xpia-elevate .card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:clamp(26px,3vw,38px);transition:box-shadow .3s,border-color .3s,transform .3s;}
+.xpia-elevate .card:hover{border-color:#dcdce4;box-shadow:0 24px 50px -30px rgba(14,14,18,.30);transform:translateY(-3px);}
+.xpia-elevate .card.feat:hover,.xpia-elevate .card.ia:hover{box-shadow:0 24px 50px -30px rgba(42,33,114,.4);}
+.xpia-elevate .card .cic{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--acc);color:#fff;margin-bottom:24px;}
+.xpia-elevate .card .cic svg{width:26px;height:26px;}
+.xpia-elevate .card h3{font-weight:var(--font-bold-w);font-size:clamp(19px,1.7vw,23px);line-height:1.2;margin:0 0 12px;}
+.xpia-elevate .card p{font-weight:var(--font-thin-w);font-size:15.5px;color:var(--muted);margin:0;line-height:1.55;}
+
+/* ─── Familia de servicios ───
+  Agrupación de tarjetas dentro del catálogo.
+  .fam-title → barra con número, nombre y badge de fase (antes/durante/después).
+*/
+.xpia-elevate .fam{margin-top:clamp(48px,6vw,72px);}
+.xpia-elevate .fam:first-of-type{margin-top:0;}
+.xpia-elevate .fam-title{display:flex;align-items:baseline;gap:14px;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid var(--line);}
+.xpia-elevate .fam-title .n{font-weight:var(--font-bold-w);font-size:15px;color:var(--acc);letter-spacing:.04em;}
+.xpia-elevate .fam-title h3{font-weight:var(--font-bold-w);font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;margin:0;}
+.xpia-elevate .fam-title .ph{margin-left:auto;font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+
+/* ─── Steps (cómo trabajamos) ───
+  Grid de 4 pasos con número, título y descripción.
+*/
+.xpia-elevate .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,2vw,24px);}
+.xpia-elevate .step{background:#fff;border:1px solid var(--line);border-radius:24px;padding:clamp(24px,3vw,32px);}
+.xpia-elevate .step .sn{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--soft);color:var(--acc);font-weight:var(--font-bold-w);font-size:17px;margin-bottom:20px;}
+.xpia-elevate .step h3{font-weight:var(--font-bold-w);font-size:19px;margin:0 0 10px;}
+.xpia-elevate .step p{font-weight:var(--font-thin-w);font-size:15px;color:var(--muted);line-height:1.55;margin:0;}
+
+/* ─── Prueba social (stats) ───
+  Grid de 4 columnas con números grandes + etiqueta debajo.
+  Ej: "+150 proyectos implementados".
+*/
+.xpia-elevate .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;}
+.xpia-elevate .stats .num{font-weight:var(--font-bold-w);font-size:clamp(40px,5vw,60px);letter-spacing:-.03em;line-height:1;}
+.xpia-elevate .stats .lbl{font-weight:var(--font-thin-w);color:var(--muted);margin-top:10px;font-size:15px;}
+/* ─── Banda de clientes (marquee infinito) ───
+   Carrusel horizontal a ancho completo, sección independiente
+   (no anidada en .wrap) para que ocupe todo el viewport.
+   Conducido por JavaScript con requestAnimationFrame + delta-time
+   para 60 fps sin el reinicio abrupto del CSS animation loop.
+   - track: display flex sin wrap, ancho = max-content
+   - .js-driven: will-change + backface-visibility para GPU
+   - wrap::before/after: gradientes laterales de desvanecimiento
+   - logo-item: padding responsive con clamp()
+   - logo-sep: línea vertical de separación entre logos
+*/
+.xpia-elevate .xpia-trusted-band{background:#fff;padding:clamp(44px,5.5vw,72px) 0}
+.xpia-elevate .xpia-trusted-band .kicker{text-align:center;font-weight:var(--font-bold-w);font-size:17px;letter-spacing:.10em;text-transform:uppercase;color:#CE007F;margin-bottom:36px;font-family:var(--font)}
+.xpia-elevate .xpia-trusted-band .marquee-wrap{overflow:hidden;position:relative;width:100%}
+.xpia-elevate .xpia-trusted-band .marquee-wrap::before,.xpia-elevate .xpia-trusted-band .marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.xpia-elevate .xpia-trusted-band .marquee-wrap::before{left:0;background:linear-gradient(to right,#fff 40%,transparent)}
+.xpia-elevate .xpia-trusted-band .marquee-wrap::after{right:0;background:linear-gradient(to left,#fff 40%,transparent)}
+.xpia-elevate .xpia-trusted-band .marquee-track{display:flex;flex-wrap:nowrap;align-items:center;width:max-content}
+.xpia-elevate .xpia-trusted-band .marquee-track.js-driven{will-change:transform;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.xpia-elevate .xpia-trusted-band .logo-item{display:inline-flex;align-items:center;justify-content:center;padding:0 clamp(28px,3.5vw,56px);flex-shrink:0;height:100px}
+.xpia-elevate .xpia-trusted-band .logo-item img{height:72px;width:auto;max-width:220px;object-fit:contain;display:block}
+.xpia-elevate .xpia-trusted-band .logo-sep{width:1px;height:44px;background:var(--line);flex-shrink:0;align-self:center}
+
+/* ─── Footer ───
+   Grid de 4 columnas con logo, empresa, redes sociales y contacto.
+   Fondo morado oscuro con texto blanco — ancla visual al final del sitio.
+*/
+.xpia-elevate .foot{background:linear-gradient(135deg,#2A2172 0%,#3d2475 50%,#2A2172 100%);padding:clamp(56px,7vw,80px) 0 36px;color:#fff;}
+.xpia-elevate .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;}
+.xpia-elevate .foot .blurb{font-weight:var(--font-thin-w);color:rgba(255,255,255,.72);font-size:15px;margin-top:14px;max-width:34ch;line-height:1.65;}
+.xpia-elevate .foot h4{font-weight:var(--font-bold-w);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin:0 0 18px;}
+.xpia-elevate .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;}
+.xpia-elevate .foot ul a{font-weight:500;font-size:15px;display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.8);transition:color .2s;}
+.xpia-elevate .foot ul a:hover{color:#fff;}
+.xpia-elevate .foot .soc,.xpia-elevate .foot .cnt{display:flex;flex-direction:column;gap:10px;}
+.xpia-elevate .foot .soc li,.xpia-elevate .foot .cnt li{list-style:none;}
+.xpia-elevate .foot .soc a,.xpia-elevate .foot .cnt a,.xpia-elevate .foot .cnt span{display:flex;align-items:center;gap:13px;color:rgba(255,255,255,.8);font-weight:500;font-size:15px;transition:color .2s;text-decoration:none;}
+.xpia-elevate .foot .soc a:hover,.xpia-elevate .foot .cnt a:hover{color:#fff;}
+.xpia-elevate .foot .soc-ic,.xpia-elevate .foot .cnt .cnt-ic{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);display:grid;place-items:center;flex-shrink:0;transition:background .2s,border-color .2s;}
+.xpia-elevate .foot .soc a:hover .soc-ic,.xpia-elevate .foot .cnt a:hover .cnt-ic{background:var(--acc);border-color:var(--acc);}
+.xpia-elevate .foot .soc-ic svg,.xpia-elevate .foot .cnt .cnt-ic svg{width:16px;height:16px;}
+.xpia-elevate .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.38);font-size:13px;}
+
+/* ─── Responsive ───
+  Breakpoints adaptados al contenido:
+  ≤880px  → tablet vertical
+  ≤680px  → móvil grande
+  ≤374px  → móvil pequeño
+*/
+
+/* Tablet (≤880px) */
+@media (max-width:880px){
+  .xpia-elevate .hero-split{grid-template-columns:1fr;gap:36px;}
+  .xpia-elevate .hero-text h1{max-width:100%;}
+  .xpia-elevate .hero-visual{max-width:340px;justify-self:center;}
+  .xpia-elevate .map{grid-template-columns:repeat(2,1fr);}
+  .xpia-elevate .bento{grid-template-columns:repeat(2,1fr);}
+  .xpia-elevate .b-lg{grid-column:span 2;}
+  .xpia-elevate .cards.c3{grid-template-columns:repeat(2,1fr);}
+  .xpia-elevate .steps{grid-template-columns:repeat(2,1fr);}
+  .xpia-elevate .stats{grid-template-columns:repeat(2,1fr);gap:32px 24px;}
+  .xpia-elevate .foot-grid{grid-template-columns:1fr 1fr;gap:32px;}
+}
+/* Móvil grande (≤680px) */
+@media (max-width:680px){
+  .xpia-elevate .map{grid-template-columns:1fr;}
+  .xpia-elevate .bento{grid-template-columns:1fr;}
+  .xpia-elevate .b-lg{grid-column:span 1;grid-row:span 1;}
+  .xpia-elevate .cards,.xpia-elevate .cards.c3{grid-template-columns:1fr;}
+  .xpia-elevate .foot-grid{grid-template-columns:1fr;gap:28px;}
+  .xpia-elevate .hero-text h1{font-size:clamp(32px,8.5vw,38px);}
+}
+@media (max-width:480px){
+  .xpia-elevate .hero-split{gap:24px;}
+  .xpia-elevate .hero-visual{max-width:260px;}
+  .xpia-elevate .hero-text .actions{flex-direction:column;align-items:stretch;}
+  .xpia-elevate .hero-text .actions .btn{justify-content:center;}
+}
+/* Trust band — responsive
+   Escala progresiva de logos, paddings y gradientes
+   en 5 breakpoints para mantener proporción visual.
+   Breaks: 1199 / 880 / 767 / 480 / 374
+*/
+@media (max-width:1199px){
+  /* Desktop pequeño / tablet apaisada */
+  .xpia-elevate .xpia-trusted-band .logo-item{padding:0 clamp(20px,2.5vw,38px);height:86px}
+  .xpia-elevate .xpia-trusted-band .logo-item img{height:60px;max-width:180px}
+}
+@media (max-width:880px){
+  /* Tablet vertical */
+  .xpia-elevate .xpia-trusted-band .kicker{font-size:14px;margin-bottom:24px}
+  .xpia-elevate .xpia-trusted-band .logo-item{padding:0 clamp(14px,2vw,26px);height:76px}
+  .xpia-elevate .xpia-trusted-band .logo-item img{height:52px;max-width:160px}
+  .xpia-elevate .xpia-trusted-band .marquee-wrap::before,.xpia-elevate .xpia-trusted-band .marquee-wrap::after{width:44px}
+}
+@media (max-width:767px){
+  /* Móvil grande / phablet */
+  .xpia-elevate .xpia-trusted-band{padding:24px 0}
+  .xpia-elevate .xpia-trusted-band .kicker{font-size:14px;margin-bottom:16px}
+  .xpia-elevate .xpia-trusted-band .logo-item{padding:0 clamp(12px,2vw,18px);height:68px}
+  .xpia-elevate .xpia-trusted-band .logo-item img{height:46px;max-width:140px}
+  .xpia-elevate .xpia-trusted-band .marquee-wrap::before,.xpia-elevate .xpia-trusted-band .marquee-wrap::after{width:44px}
+}
+@media (max-width:480px){
+  /* Móvil estándar */
+  .xpia-elevate .xpia-trusted-band{padding:18px 0}
+  .xpia-elevate .xpia-trusted-band .logo-item{padding:0 10px;height:60px}
+  .xpia-elevate .xpia-trusted-band .logo-item img{height:40px;max-width:120px}
+  .xpia-elevate .xpia-trusted-band .marquee-wrap::before,.xpia-elevate .xpia-trusted-band .marquee-wrap::after{width:28px}
+}
+@media (max-width:374px){
+  /* Móvil pequeño */
+  .xpia-elevate .xpia-trusted-band .logo-item{padding:0 8px;height:52px}
+  .xpia-elevate .xpia-trusted-band .logo-item img{height:32px;max-width:96px}
+}
+
+/* ─── prefers-reduced-motion ───
+  Usuarios que prefieren reducir animaciones:
+  desactiva transiciones CSS, animación SVG, marquee y título degradado.
+*/
+@media (prefers-reduced-motion:reduce){
+  .xpia-elevate *{transition:none!important;}
+  .hero-glow,.hero-dotted,.hero-photo-group,.hero-photo-ring,
+  .hero-nodes .node,.hero-lines,.hero-pulse-wave,.hero-pulse-wave-2,
+  .hero-orbit,.hero-data-flow path,.hero-particles .particle,
+  .fb-curve,.fb-curve2,.fb-glow,.fb-pulse,.fb-traveler,.fb-origin,.fb-p2,.fb-p3,.fb-p4,.fb-p5,.fb-dash,.fb-ripple,.fb-ripple2,.feat-bg,.feat-photo,.feat-photo-shine,
+  .xpia-elevate .hero-text h1{animation:none!important;}
+  .xpia-elevate .hero-text h1{background-position:35% 50%!important;}
+  .fb-curve,.fb-curve2{stroke-dashoffset:0!important;}
+  .fb-glow{opacity:.8!important;}
+  .fb-pulse{opacity:.45!important;transform:scale(1)!important;}
+  .fb-traveler{stroke-dashoffset:0!important;opacity:.3!important;}
+  .fb-origin{opacity:.5!important;transform:scale(1)!important;}
+  .fb-p2,.fb-p3,.fb-p4,.fb-p5{opacity:.3!important;transform:translateY(0) scale(1)!important;}
+  .fb-ripple,.fb-ripple2{opacity:0!important;}
+  .feat-bg{opacity:1!important;}
+}
+
+/* ─── focus-visible ───
+  Anillo de enfoque accesible para navegación por teclado.
+  Solo aparece cuando se navega con teclado (no con clic).
+*/
+.xpia-elevate *:focus-visible{outline:2px solid #CE007F;outline-offset:2px; border-radius:4px;}
+
+/* ═══════════════════════════════════════════════════
+   CONSULTOR VIRTUAL — XPfab (floating chatbot)
+   Botón flotante + panel de chat + respuestas IA
+   ═══════════════════════════════════════════════════ */
+.xpfab-root{position:fixed;bottom:80px;right:24px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:14px;font-family:'Montserrat',system-ui,sans-serif;opacity:0;pointer-events:none;transform:translateY(20px) scale(.94);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.xpfab-root.xpfab-visible{opacity:1;pointer-events:auto;transform:translateY(0) scale(1)}
+.xpfab-panel{width:380px;transform:scale(.88) translateY(18px);transform-origin:bottom right;opacity:0;pointer-events:none;transition:transform .3s cubic-bezier(.22,1,.36,1),opacity .22s ease;position:relative;border-radius:24px;padding:2px;background:linear-gradient(135deg,#EA5773,#CE007F,#6A388D);box-shadow:0 20px 60px rgba(42,33,114,.16),0 4px 16px rgba(206,0,127,.14)}
+.xpfab-panel.xpfab-open{transform:scale(1) translateY(0);opacity:1;pointer-events:auto}
+@media(max-width:430px){.xpfab-panel{width:calc(100vw - 32px);max-height:calc(100dvh - 100px)}.xpfab-root{right:16px;bottom:72px}.xpfab-body{max-height:calc(100dvh - 280px)}.xpfab-card{display:flex;flex-direction:column;height:100%}.xpfab-footer{margin-top:auto}}
+.xpfab-root .xpfab-card{background:#fff;border-radius:22px;overflow:hidden}
+.xpfab-trigger{display:flex;align-items:center;gap:10px}
+.xpfab-label-pill{background:#fff;font-family:'Montserrat',system-ui,sans-serif;padding:10px 16px 10px 14px;border-radius:16px;box-shadow:0 6px 24px rgba(42,33,114,.16),0 1px 4px rgba(0,0,0,.07);white-space:nowrap;cursor:pointer;border:1.5px solid rgba(42,33,114,.10);display:flex;flex-direction:column;align-items:flex-start;gap:3px;animation:xpfab-float 4.5s ease-in-out infinite;transition:box-shadow .25s,transform .25s;position:relative;min-width:200px}
+.xpfab-label-pill::after{content:'';position:absolute;right:-8px;top:50%;transform:translateY(-50%);border:8px solid transparent;border-left:8px solid #fff;border-right:0}
+.xpfab-label-pill:hover{box-shadow:0 10px 30px rgba(42,33,114,.22);transform:translateY(-3px)}
+.xpfab-pill-top{display:flex;align-items:center;gap:7px}
+.xpfab-pill-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0;animation:xpfab-pulse 2.2s ease-in-out infinite}
+.xpfab-pill-tag{font-size:10px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:#22c55e}
+.xpfab-pill-msg{font-size:13.5px;font-weight:800;color:#2A2172;line-height:1.25;transition:opacity .3s ease,transform .3s ease}
+.xpfab-pill-msg.xp-out{opacity:0;transform:translateY(-5px)}
+.xpfab-root.xpfab-open .xpfab-label-pill{opacity:0;pointer-events:none;transform:translateX(10px);transition:opacity .2s,transform .2s}
+.xpfab-btn{width:60px;height:60px;border-radius:50%;border:none;cursor:pointer;padding:0;background:none;position:relative;animation:xpfab-float 4.5s ease-in-out infinite;filter:drop-shadow(0 8px 22px rgba(206,0,127,.42));flex-shrink:0}
+.xpfab-btn img{width:60px;height:60px;border-radius:50%;display:block;object-fit:contain}
+.xpfab-ring{position:absolute;inset:-3px;border-radius:50%;background:conic-gradient(from 0deg,#EA5773,#CE007F,#6A388D,#EA5773);z-index:-1;animation:xpfab-rspin 4s linear infinite}
+.xpfab-ring::after{content:'';position:absolute;inset:3px;border-radius:50%;background:#fff}
+.xpfab-btn::after{content:'';position:absolute;top:2px;right:2px;width:13px;height:13px;border-radius:50%;background:#22c55e;border:2px solid #fff;animation:xpfab-pulse 2.2s ease-in-out infinite}
+.xpfab-root.xpfab-open .xpfab-btn::after{display:none}
+@keyframes xpfab-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes xpfab-rspin{to{transform:rotate(360deg)}}
+@keyframes xpfab-pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.xpfab-topbar{display:flex;align-items:center;gap:14px;padding:1rem 1.5rem;background:linear-gradient(135deg,#2A2172,#6A388D)}
+.xpfab-av{width:44px;height:44px;border-radius:14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:21px}
+.xpfab-tb-info{display:flex;flex-direction:column;gap:2px}
+.xpfab-tb-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);font-family:'Montserrat',system-ui,sans-serif;display:block}
+.xpfab-tb-name{font-size:15px;font-weight:800;color:#fff;margin-bottom:0;line-height:1.2;font-family:'Montserrat',system-ui,sans-serif;display:block}
+.xpfab-tb-status{font-size:12px;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:6px;font-family:'Montserrat',system-ui,sans-serif}
+.xpfab-online{width:8px;height:8px;border-radius:50%;background:#22c55e;flex-shrink:0;animation:xpfab-oping 2s ease-in-out infinite}
+@keyframes xpfab-oping{0%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.xpfab-reset-btn{background:rgba(255,255,255,.12)!important;border:1px solid rgba(255,255,255,.2)!important;border-radius:8px!important;color:rgba(255,255,255,.8)!important;font-size:11px!important;font-family:'Montserrat',system-ui,sans-serif!important;font-weight:500!important;padding:5px 10px!important;cursor:pointer!important;display:inline-flex!important;align-items:center!important;gap:5px!important;transition:background .2s!important;white-space:nowrap!important;line-height:1!important}
+.xpfab-reset-btn:hover{background:rgba(255,255,255,.22)!important;color:#fff!important}
+.xpfab-close{margin-left:4px;background:rgba(255,255,255,.15)!important;border:1px solid rgba(255,255,255,.2)!important;border-radius:50%!important;width:30px!important;height:30px!important;display:grid!important;place-items:center!important;cursor:pointer!important;color:#fff!important;flex-shrink:0;padding:0!important;transition:background .2s!important}
+.xpfab-close:hover{background:rgba(255,255,255,.28)!important}
+.xpfab-close svg{width:16px;height:16px}
+.xpfab-body{padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:14px;min-height:80px;max-height:300px;overflow-y:auto;scroll-behavior:smooth;background:#F7F6FA}
+.xpfab-body::-webkit-scrollbar{width:4px}
+.xpfab-body::-webkit-scrollbar-thumb{background:#EAEAEF;border-radius:99px}
+.xpfab-msg-bot{display:flex;gap:10px;align-items:flex-start}
+.xpfab-msg-av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#EA5773,#CE007F,#6A388D);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;color:#fff;font-size:14px}
+.xpfab-bubble-bot{background:#fff!important;border:1px solid #EAEAEF!important;border-radius:4px 16px 16px 16px!important;padding:12px 16px!important;font-size:13.5px!important;color:#0E0E12!important;line-height:1.6!important;max-width:88%;word-break:break-word;font-family:'Montserrat',system-ui,sans-serif!important;white-space:pre-wrap;box-shadow:0 1px 4px rgba(14,14,18,.06)!important}
+.xpfab-bubble-user{background:linear-gradient(135deg,#EA5773,#CE007F,#6A388D)!important;border-radius:16px 4px 16px 16px!important;padding:12px 16px!important;font-size:13.5px!important;color:#fff!important;line-height:1.6!important;max-width:80%;align-self:flex-end;word-break:break-word;font-family:'Montserrat',system-ui,sans-serif!important;animation:xpfab-sright .3s ease;box-shadow:none!important}
+@keyframes xpfab-sright{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+.xpfab-msg-bot-anim{animation:xpfab-sup .35s ease}
+@keyframes xpfab-sup{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.xpfab-typing{display:none;gap:10px;align-items:flex-start;padding:0 1.5rem .75rem;background:#F7F6FA}
+.xpfab-typing-bubble{background:#fff;border:1px solid #EAEAEF;border-radius:4px 16px 16px 16px;padding:14px 18px;display:flex;gap:5px;align-items:center}
+.xpfab-td{width:7px;height:7px;border-radius:50%;background:#6A388D;animation:xpfab-dot 1.2s infinite}
+.xpfab-td:nth-child(2){animation-delay:.2s}.xpfab-td:nth-child(3){animation-delay:.4s}
+@keyframes xpfab-dot{0%,80%,100%{opacity:.25}40%{opacity:1}}
+.xpfab-chips{display:flex;flex-wrap:wrap;gap:7px;padding:0 1.5rem 1rem;background:#F7F6FA}
+.xpfab-chip{font-size:11.5px!important;padding:6px 13px!important;border-radius:99px!important;border:1px solid #EAEAEF!important;background:#fff!important;color:#2A2172!important;cursor:pointer!important;font-family:'Montserrat',system-ui,sans-serif!important;font-weight:500!important;white-space:nowrap!important;position:relative;overflow:hidden;transition:border-color .2s,box-shadow .2s,transform .15s!important;display:inline-flex!important;align-items:center!important;line-height:1!important;box-shadow:none!important;min-height:30px!important;-webkit-appearance:none!important;appearance:none!important}
+.xpfab-chip::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#EA5773,#CE007F,#6A388D);opacity:0;transition:opacity .2s;border-radius:99px}
+.xpfab-chip:hover{border-color:transparent!important;transform:translateY(-2px)!important;box-shadow:0 6px 16px rgba(206,0,127,.28)!important}
+.xpfab-chip:hover::after{opacity:1}
+.xpfab-chip span{position:relative;z-index:1}
+.xpfab-chip:hover span{color:#fff!important}
+.xpfab-footer{padding:.875rem 1.5rem 1.25rem;border-top:1px solid #EAEAEF;background:#fff}
+.xpfab-input-row{display:flex;gap:10px}
+.xpfab-input{flex:1!important;min-width:0!important;padding:12px 14px!important;border:1px solid #EAEAEF!important;border-radius:13px!important;font-size:13.5px!important;font-family:'Montserrat',system-ui,sans-serif!important;color:#0E0E12!important;background:#F7F6FA!important;outline:none!important;transition:border-color .2s,background .2s,box-shadow .2s!important;-webkit-appearance:none!important;appearance:none!important;box-shadow:none!important;height:auto!important}
+.xpfab-input:focus{border-color:#CE007F!important;background:#fff!important;box-shadow:0 0 0 3px rgba(206,0,127,.12)!important}
+.xpfab-input::placeholder{color:#bbb!important}
+.xpfab-send-btn{flex-shrink:0!important;padding:0 18px!important;background:linear-gradient(135deg,#EA5773,#CE007F,#6A388D)!important;color:#fff!important;border:none!important;border-radius:13px!important;font-size:13.5px!important;font-weight:700!important;cursor:pointer!important;font-family:'Montserrat',system-ui,sans-serif!important;display:inline-flex!important;align-items:center!important;gap:7px!important;white-space:nowrap!important;transition:box-shadow .2s,transform .15s!important;min-height:44px!important;box-shadow:none!important;-webkit-appearance:none!important;appearance:none!important}
+.xpfab-send-btn:hover{box-shadow:0 6px 18px rgba(206,0,127,.38)!important;transform:translateY(-2px)!important}
+.xpfab-send-btn:disabled{background:#EAEAEF!important;color:#aaa!important;cursor:default!important;box-shadow:none!important;transform:none!important}
+.xpfab-hint{font-size:11px!important;color:#bbb!important;margin-top:8px!important;text-align:center!important;font-family:'Montserrat',system-ui,sans-serif!important;display:block}
+.xpfab-wa-cta{display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:1px solid #86efac;border-radius:14px;padding:10px 14px;margin-top:4px;animation:xpfab-sup .4s ease}
+.xpfab-wa-btn{display:inline-flex!important;align-items:center!important;gap:7px!important;background:#25D366!important;color:#fff!important;border:none!important;border-radius:99px!important;padding:9px 16px!important;font-size:12.5px!important;font-weight:700!important;font-family:'Montserrat',system-ui,sans-serif!important;cursor:pointer!important;white-space:nowrap!important;text-decoration:none!important;transition:background .2s,transform .15s!important;-webkit-appearance:none!important;appearance:none!important}
+.xpfab-wa-btn:hover{background:#1ebe5d!important;transform:scale(1.03)!important}
+.xpfab-wa-text{font-size:11.5px!important;color:#166534!important;font-family:'Montserrat',system-ui,sans-serif!important;line-height:1.4}
+.xpfab-appt-btn{display:inline-flex!important;align-items:center!important;gap:7px!important;background:linear-gradient(135deg,#EA5773,#CE007F,#6A388D)!important;color:#fff!important;border:none!important;border-radius:99px!important;padding:9px 16px!important;font-size:12.5px!important;font-weight:700!important;font-family:'Montserrat',system-ui,sans-serif!important;cursor:pointer!important;white-space:nowrap!important;text-decoration:none!important;transition:box-shadow .2s,transform .15s!important;-webkit-appearance:none!important;appearance:none!important}
+.xpfab-appt-btn:hover{box-shadow:0 6px 18px rgba(206,0,127,.38)!important;transform:scale(1.03)!important}
+@media print{.xpfab-root{display:none!important}}
+
+</style>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css" crossorigin="anonymous">
+
+<div class="xpia-elevate">
+<main>
+
+  
+  <header class="hero" id="hero">
+    <div class="wrap">
+      <div class="hero-split">
+        <div class="hero-text">
+          <span class="eyebrow"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path></svg></span>Servicios</span>
+          <h1>Transformación digital a tu alcance y a tu medida</h1>
+          <p>Convierte la tecnología en una ventaja competitiva. Te acompañamos en todo el ciclo: de la estrategia inicial a la operación diaria de tu plataforma Odoo.</p>
+          <div class="actions">
+            <a class="btn" href="/contacto">Cotizar <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+            <a class="btn ghost" href="#catalogo">Ver todos los servicios</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 450" fill="none">
+            <defs>
+              <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#CE007F"></stop>
+                <stop offset="100%" stop-color="#2A2172"></stop>
+              </linearGradient>
+              <linearGradient id="hg4" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#6A388D"></stop>
+                <stop offset="33%" stop-color="#CE007F"></stop>
+                <stop offset="66%" stop-color="#EA5773"></stop>
+                <stop offset="100%" stop-color="#2A2172"></stop>
+              </linearGradient>
+              <clipPath id="heroPhotoClip">
+                <circle cx="250" cy="225" r="150"></circle>
+              </clipPath>
+            </defs>
+            <circle cx="250" cy="225" r="200" fill="url(#hg)" class="hero-glow"></circle>
+            <circle cx="250" cy="225" r="30" fill="none" stroke="#CE007F" stroke-width="1.5" class="hero-pulse-wave"></circle>
+            <circle cx="250" cy="225" r="30" fill="none" stroke="#CE007F" stroke-width="1" class="hero-pulse-wave-2"></circle>
+            <circle cx="250" cy="225" r="169" fill="none" stroke="url(#hg4)" stroke-width="3" stroke-dasharray="15 11" stroke-linecap="round" opacity="0.85" class="hero-photo-ring"></circle>
+            <g class="hero-orbit">
+              <circle cx="420" cy="225" r="4.5" fill="#CE007F" opacity="0.75"></circle>
+              <circle cx="165" cy="372" r="3.5" fill="#6A388D" opacity="0.6"></circle>
+              <circle cx="165" cy="78" r="4" fill="#EA5773" opacity="0.6"></circle>
+            </g>
+            <g class="hero-photo-group">
+              <circle cx="250" cy="225" r="154" fill="none" stroke="#fff" stroke-width="3" opacity="0.9"></circle>
+              <image href="https://xpia.odoo.com/web/image/15002-5f521591/c3c8bc270bb8e0520f7d9c5930c45163.jpg?height=700" xlink:href="https://xpia.odoo.com/web/image/15002-5f521591/c3c8bc270bb8e0520f7d9c5930c45163.jpg?height=700" x="100" y="75" width="300" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#heroPhotoClip)" class="hero-photo-img"></image>
+            </g>
+            <g class="hero-lines" opacity="0.25">
+              <path d="M250 78 Q324 128 388 185" stroke="#CE007F" stroke-width="1.2"></path>
+              <path d="M388 185 Q365 270 328 348" stroke="#6A388D" stroke-width="1.2"></path>
+              <path d="M328 348 Q240 342 155 315" stroke="#CE007F" stroke-width="1.2"></path>
+              <path d="M155 315 Q125 230 130 155" stroke="#6A388D" stroke-width="1.2"></path>
+              <path d="M130 155 Q186 110 250 78" stroke="#CE007F" stroke-width="1.2"></path>
+            </g>
+            <g class="hero-data-flow" opacity="0.45">
+              <path d="M250 78 Q324 128 388 185" stroke="#CE007F" stroke-width="1.5" stroke-dasharray="2 48"></path>
+              <path d="M388 185 Q365 270 328 348" stroke="#6A388D" stroke-width="1.5" stroke-dasharray="2 44"></path>
+              <path d="M328 348 Q240 342 155 315" stroke="#CE007F" stroke-width="1.5" stroke-dasharray="2 40"></path>
+              <path d="M155 315 Q125 230 130 155" stroke="#6A388D" stroke-width="1.5" stroke-dasharray="2 36"></path>
+              <path d="M130 155 Q186 110 250 78" stroke="#CE007F" stroke-width="1.5" stroke-dasharray="2 32"></path>
+            </g>
+            <g class="hero-nodes">
+              <circle cx="250" cy="78" r="6" fill="#CE007F" class="node"></circle>
+              <circle cx="388" cy="185" r="4.5" fill="#6A388D" class="node node-2"></circle>
+              <circle cx="328" cy="348" r="5.5" fill="#CE007F" class="node node-3"></circle>
+              <circle cx="155" cy="315" r="4.5" fill="#6A388D" class="node node-4"></circle>
+              <circle cx="130" cy="155" r="5" fill="#CE007F" class="node node-5"></circle>
+            </g>
+            <g class="hero-particles" opacity="0.3">
+              <circle cx="170" cy="130" r="1.5" fill="#CE007F" class="particle"></circle>
+              <circle cx="330" cy="105" r="1.5" fill="#6A388D" class="particle pt2"></circle>
+              <circle cx="390" cy="270" r="1.5" fill="#CE007F" class="particle pt3"></circle>
+              <circle cx="320" cy="375" r="1.5" fill="#6A388D" class="particle pt4"></circle>
+              <circle cx="120" cy="340" r="1.5" fill="#CE007F" class="particle pt5"></circle>
+              <circle cx="95" cy="185" r="1.5" fill="#6A388D" class="particle pt6"></circle>
+            </g>
+            <g class="hero-dots" opacity="0.2">
+              <circle cx="90" cy="95" r="2" fill="#CE007F"></circle>
+              <circle cx="410" cy="95" r="2" fill="#CE007F"></circle>
+              <circle cx="90" cy="355" r="2" fill="#6A388D"></circle>
+              <circle cx="410" cy="355" r="2" fill="#6A388D"></circle>
+            </g>
+            <g class="hero-cross" opacity="0.08">
+              <path d="M250 78 L250 372" stroke="url(#hg)" stroke-width="0.5" stroke-dasharray="4 8"></path>
+              <path d="M65 225 L435 225" stroke="url(#hg)" stroke-width="0.5" stroke-dasharray="4 8"></path>
+              <path d="M130 155 L370 295" stroke="url(#hg)" stroke-width="0.5" stroke-dasharray="4 8"></path>
+              <path d="M370 155 L130 295" stroke="url(#hg)" stroke-width="0.5" stroke-dasharray="4 8"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+      
+      <nav class="map" aria-label="Familias de servicios">
+        <a href="#f01"><span class="n">01</span><span class="lbl">Estrategia y dirección</span><span class="ar"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span></a>
+        <a href="#f02"><span class="n">02</span><span class="lbl">Implementación</span><span class="ar"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span></a>
+        <a href="#f03"><span class="n">03</span><span class="lbl">Operación y soporte</span><span class="ar"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span></a>
+        <a href="#f04"><span class="n">04</span><span class="lbl">Especializados</span><span class="ar"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span></a>
+      </nav>
+    </div>
+  </header>
+
+  
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.9 5.8H20l-5 3.6 1.9 5.8-5-3.6-5 3.6L9 12.4 4 8.8h6.1z"></path></svg></span>Lo que mejor hacemos</span>
+        <h2>Servicios destacados</h2>
+        <p>Nuestro núcleo como Odoo Partner, más la puerta a nuestras soluciones de inteligencia artificial.</p>
+      </div>
+      
+      <div class="bento">
+        <article class="card feat b-lg">
+          <img class="feat-photo" src="https://xpia.odoo.com/web/image/15001-0565dfeb/SALA%20DE%20DESARROLLO%20XPIA.jpg?height=1600" alt="" aria-hidden="true" loading="lazy">
+          <div class="feat-photo-shine" aria-hidden="true"></div>
+          <div class="feat-photo-tint" aria-hidden="true"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="feat-bg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              
+              <radialGradient id="rg1" cx="75%" cy="15%" r="80%">
+                <stop offset="0%" stop-color="#CE007F" stop-opacity="0.5"></stop>
+                <stop offset="40%" stop-color="#CE007F" stop-opacity="0.15"></stop>
+                <stop offset="100%" stop-color="#CE007F" stop-opacity="0"></stop>
+              </radialGradient>
+              
+              <radialGradient id="rg2" cx="20%" cy="85%" r="70%">
+                <stop offset="0%" stop-color="#2A2172" stop-opacity="0.5"></stop>
+                <stop offset="40%" stop-color="#2A2172" stop-opacity="0.15"></stop>
+                <stop offset="100%" stop-color="#2A2172" stop-opacity="0"></stop>
+              </radialGradient>
+              
+              <radialGradient id="rg3" cx="10%" cy="95%" r="25%">
+                <stop offset="0%" stop-color="#CE007F" stop-opacity="0.25"></stop>
+                <stop offset="100%" stop-color="#CE007F" stop-opacity="0"></stop>
+              </radialGradient>
+              
+              <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#CE007F" stop-opacity="0.3"></stop>
+                <stop offset="50%" stop-color="#CE007F" stop-opacity="0.1"></stop>
+                <stop offset="100%" stop-color="#CE007F" stop-opacity="0"></stop>
+              </linearGradient>
+            </defs>
+            
+            <rect width="600" height="400" fill="url(#rg1)"></rect>
+            <rect width="600" height="400" fill="url(#rg2)"></rect>
+            
+            <path class="fb-curve" d="M60,380 C200,340 320,260 420,180 C480,130 540,80 580,40" stroke="rgba(255,255,255,0.18)" stroke-width="2.5" fill="none" stroke-linecap="round"></path>
+            
+            <path class="fb-curve2" d="M20,200 C100,160 200,220 300,160 C380,110 440,40 500,20" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" fill="none" stroke-linecap="round"></path>
+            
+            <path class="fb-dash" d="M60,395 C200,355 320,275 420,195 C480,145 540,95 580,55" stroke="rgba(255,255,255,0.14)" stroke-width="1.5" fill="none" stroke-dasharray="5 9" stroke-linecap="round"></path>
+            
+            <path class="fb-glow" d="M420,180 C480,130 540,80 580,40" stroke="url(#lg1)" stroke-width="50" fill="none" stroke-linecap="round"></path>
+            
+            <circle class="fb-ripple" cx="580" cy="40" r="6" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2"></circle>
+            <circle class="fb-ripple2" cx="580" cy="40" r="6" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"></circle>
+            
+            <circle class="fb-pulse" cx="580" cy="40" r="3.5" fill="rgba(255,255,255,0.45)"></circle>
+            
+            <path class="fb-traveler" d="M60,380 C200,340 320,260 420,180 C480,130 540,80 580,40" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="0.1 2000"></path>
+            
+            <circle class="fb-origin" cx="60" cy="380" r="16" fill="url(#rg3)"></circle>
+            
+            <circle class="fb-p2" cx="300" cy="160" r="2" fill="rgba(255,255,255,0.25)"></circle>
+            <circle class="fb-p3" cx="100" cy="160" r="1.5" fill="rgba(255,255,255,0.2)"></circle>
+            <circle class="fb-p4" cx="460" cy="100" r="1.5" fill="rgba(255,255,255,0.15)"></circle>
+            <circle class="fb-p5" cx="200" cy="270" r="1.2" fill="rgba(255,255,255,0.12)"></circle>
+          </svg>
+          <span class="cic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"></rect><rect x="2" y="14" width="20" height="8" rx="2"></rect><path d="M6 6h.01M6 18h.01"></path></svg></span>
+          <span class="tag">Nuestra especialidad</span>
+          <h3>Somos expertos en implementación y administración de Odoo</h3>
+          <p>Operamos, monitoreamos y optimizamos tu plataforma Odoo SaaS y SH para que enfoques tus recursos en el negocio.</p>
+        </article>
+        <article class="card ia" tabindex="0" role="button" aria-expanded="false" aria-controls="extra-b2">
+          <span class="cic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"></rect><path d="M10 2v3M14 2v3M10 19v3M14 19v3M2 10h3M2 14h3M19 10h3M19 14h3"></path></svg></span>
+          <h3>Soluciones de IA</h3>
+          <p>Modelos a medida, lenguaje natural, visión y automatización inteligente.</p>
+           <span class="go">Explorar el hub <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+          <div class="extra" id="extra-b2">
+            <ul>
+              <li><strong>Modelos a medida</strong> — Fine-tuning con tus datos para tu industria.</li>
+              <li><strong>NLP</strong> — Chatbots, análisis de sentimiento y generación de contenido.</li>
+              <li><strong>Visión</strong> — Inspección visual, OCR y reconocimiento de objetos.</li>
+              <li><strong>Automatización</strong> — RPA + IA: procesos que aprenden y deciden solos.</li>
+              <li><strong>Integración Odoo</strong> — Asistentes inteligentes dentro de tu ERP.</li>
+            </ul>
+            <a class="btn" href="/contacto">Agendar llamada <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+          </div>
+          <span class="bi"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+        </article>
+        <article class="card" tabindex="0" role="button" aria-expanded="false" aria-controls="extra-b3"><span class="bi"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span><span class="cic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg></span><h3>Implementación</h3><p>En marcha desde el primer día.</p>
+          <div class="extra" id="extra-b3"><ul><li><strong>Diagnóstico</strong> — Análisis de procesos actuales y requisitos.</li><li><strong>Configuración</strong> — Parametrización de módulos Odoo a tu medida.</li><li><strong>Migración</strong> — Carga y validación de datos desde tu sistema anterior.</li><li><strong>Puesta en producción</strong> — Pruebas, ajustes y lanzamiento con acompañamiento.</li></ul></div>
+        </article>
+        <article class="card" tabindex="0" role="button" aria-expanded="false" aria-controls="extra-b4"><span class="cic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg></span><h3>Desarrollo</h3><p>Sobre tus procesos reales.</p>
+          <span class="bi"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span><div class="extra" id="extra-b4"><ul><li><strong>Módulos a medida</strong> — Funcionalidades que no existen en Odoo estándar.</li><li><strong>Integraciones API</strong> — Conexión con sistemas externos (CFDI, bancos, e-commerce).</li><li><strong>Automatización</strong> — Flujos de trabajo inteligentes que eliminan tareas manuales.</li><li><strong>Reportes</strong> — Paneles y dashboards personalizados para tu negocio.</li></ul></div>
+        </article>
+        <article class="card" tabindex="0" role="button" aria-expanded="false" aria-controls="extra-b5"><span class="cic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path></svg></span><h3>Consultoría</h3><p>La estrategia que inicia todo.</p>
+          <span class="bi"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span><div class="extra" id="extra-b5"><ul><li><strong>Diagnóstico tecnológico</strong> — Evaluación de tu infraestructura y procesos actuales.</li><li><strong>Roadmap digital</strong> — Hoja de ruta con hitos, costos y tiempos.</li><li><strong>Selección de stack</strong> — Recomendación de tecnologías alineadas a tus objetivos.</li><li><strong>ROI analysis</strong> — Proyección de retorno de inversión y ahorros esperados.</li></ul></div>
+        </article>
+        <article class="card" tabindex="0" role="button" aria-expanded="false" aria-controls="extra-b6"><span class="cic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"></path><path d="M6 12v5c0 1 2 3 6 3s6-2 6-3v-5"></path></svg></span><h3>Capacitación</h3><p>Para aprovechar cada herramienta.</p>
+          <span class="bi"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span><div class="extra" id="extra-b6"><ul><li><strong>Talleres prácticos</strong> — Sesiones presenciales o remotas con ejercicios reales.</li><li><strong>Material personalizado</strong> — Guías y manuales adaptados a tu operación.</li><li><strong>Certificación</strong> — Programa de capacitación con evaluación y certificación.</li><li><strong>Soporte post-curso</strong> — Acompañamiento para resolver dudas después de la formación.</li></ul></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section alt" id="catalogo">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg></span>Catálogo completo</span>
+        <h2>Te acompañamos en cada fase</h2>
+        <p>Diez servicios organizados por el momento en que los necesitas, del primer diagnóstico a la operación continua.</p>
+      </div>
+
+      
+      <div class="fam" id="f01">
+        <div class="fam-title"><span class="n">01</span><h3>Estrategia y dirección</h3><span class="ph">Antes · planear</span></div>
+        <div class="cards c3">
+          <article class="card"><span class="cic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path></svg></span><h3>Consultoría</h3><p>Estrategias tecnológicas para eficiencia, innovación y crecimiento sostenible.</p><button type="button" class="more" aria-expanded="false" aria-controls="extra-c01-1">Ver más <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></button><div class="extra" id="extra-c01-1"><ul><li><strong>Análisis de procesos</strong> — Diagnóstico tecnológico integral de tu operación actual.</li><li><strong>Benchmarking</strong> — Comparativa con mejores prácticas de tu industria.</li><li><strong>Roadmap estratégico</strong> — Hoja de ruta con hitos, costos y tiempos.</li><li><strong>Selección de stack</strong> — Recomendación de tecnologías alineadas a tu negocio.</li></ul></div></article>
+          <article class="card"><span class="cic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4M12 16h4M8 11h.01M8 16h.01"></path></svg></span><h3>Gestión de proyectos</h3><p>Metodologías probadas para cumplir objetivos, tiempos y presupuesto.</p><button type="button" class="more" aria-expanded="false" aria-controls="extra-c01-2">Ver más <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></button><div class="extra" id="extra-c01-2"><ul><li><strong>Planeación</strong> — Metodologías ágiles y tradicionales según el proyecto.</li><li><strong>Seguimiento</strong> — Monitoreo de avances, riesgos y presupuesto en tiempo real.</li><li><strong>Comunicación</strong> — Reportes periódicos con stakeholders del proyecto.</li><li><strong>Cierre</strong> — Evaluación de resultados y lecciones aprendidas.</li></ul></div></article>
+          <article class="card"><span class="cic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M3 21v-5h5"></path></svg></span><h3>Gestión del cambio</h3><p>Adopción de tecnología con compromiso y adaptación de tu equipo.</p><button type="button" class="more" aria-expanded="false" aria-controls="extra-c01-3">Ver más <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></button><div class="extra" id="extra-c01-3"><ul><li><strong>Diagnóstico cultural</strong> — Evaluación de la disposición al cambio en tu organización.</li><li><strong>Plan de comunicación</strong> — Estrategia para alinear a todos los involucrados.</li><li><strong>Acompañamiento</strong> — Soporte cercano durante toda la transición.</li><li><strong>Medición</strong> — Indicadores de adopción y satisfacción del equipo.</li></ul></div></article>
+        </div>
+      </div>
+
+      
+      <div class="fam" id="f02">
+        <div class="fam-title"><span class="n">02</span><h3>Implementación y desarrollo</h3><span class="ph">Durante · construir</span></div>
+        <div class="cards c3">
+          <article class="card"><span class="cic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg></span><h3>Implementación</h3><p>Puesta en marcha integral y transición eficiente a Odoo desde el primer día.</p><button type="button" class="more" aria-expanded="false" aria-controls="extra-c02-1">Ver más <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></button><div class="extra" id="extra-c02-1"><ul><li><strong>Configuración</strong> — Parametrización de módulos Odoo según tus procesos.</li><li><strong>Migración</strong> — Carga, limpieza y validación de datos desde tu sistema anterior.</li><li><strong>Pruebas</strong> — Testing integral de funcionalidades y flujos críticos.</li><li><strong>Go-live</strong> — Puesta en producción con acompañamiento y ajustes finales.</li></ul></div></article>
+          <article class="card"><span class="cic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg></span><h3>Desarrollo</h3><p>Funcionalidades a medida según los procesos y objetivos de tu empresa.</p><button type="button" class="more" aria-expanded="false" aria-controls="extra-c02-2">Ver más <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></button><div class="extra" id="extra-c02-2"><ul><li><strong>Módulos a medida</strong> — Funcionalidades que no existen en Odoo estándar.</li><li><strong>APIs</strong> — Integración con sistemas externos (CFDI, bancos, e-commerce).</li><li><strong>Automatización</strong> — Flujos inteligentes que eliminan tareas repetitivas.</li><li><strong>Reportes</strong> — Dashboards personalizados para la toma de decisiones.</li></ul></div></article>
+          <article class="card"><span class="cic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"></path><path d="M6 12v5c0 1 2 3 6 3s6-2 6-3v-5"></path></svg></span><h3>Capacitación</h3><p>Formación práctica para maximizar el valor de tu tecnología.</p><button type="button" class="more" aria-expanded="false" aria-controls="extra-c02-3">Ver más <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></button><div class="extra" id="extra-c02-3"><ul><li><strong>Talleres prácticos</strong> — Sesiones presenciales o remotas con casos reales.</li><li><strong>Material</strong> — Guías y manuales adaptados a tu operación específica.</li><li><strong>Certificación</strong> — Programa con evaluación y acreditación de competencias.</li><li><strong>Post-curso</strong> — Acompañamiento para resolver dudas después de la formación.</li></ul></div></article>
+        </div>
+      </div>
+
+      
+      <div class="fam" id="f03">
+        <div class="fam-title"><span class="n">03</span><h3>Operación y soporte</h3><span class="ph">Después · mantener</span></div>
+        <div class="cards">
+          <article class="card"><span class="cic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"></rect><rect x="2" y="14" width="20" height="8" rx="2"></rect><path d="M6 6h.01M6 18h.01"></path></svg></span><h3>Administración Odoo SaaS / SH</h3><p>Operación, monitoreo y optimización permanente de tu plataforma para que enfoques tus recursos en el negocio.</p><button type="button" class="more" aria-expanded="false" aria-controls="extra-c03-1">Ver más <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></button><div class="extra" id="extra-c03-1"><ul><li><strong>Monitoreo 24/7</strong> — Supervisión continua de rendimiento y disponibilidad.</li><li><strong>Optimización</strong> — Ajuste de recursos, módulos y procesos para máxima eficiencia.</li><li><strong>Actualizaciones</strong> — Upgrades programados sin interrupción del negocio.</li><li><strong>Seguridad</strong> — Resguardos, respaldos y cumplimiento de normativas.</li></ul></div></article>
+          <article class="card"><span class="cic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"></path><circle cx="12" cy="12" r="4"></circle></svg></span><h3>Soporte</h3><p>Atención especializada para la continuidad operativa y el máximo desempeño de tu sistema.</p><button type="button" class="more" aria-expanded="false" aria-controls="extra-c03-2">Ver más <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></button><div class="extra" id="extra-c03-2"><ul><li><strong>Mesa de ayuda</strong> — Atención con respuesta garantizada según tu SLA.</li><li><strong>Mantenimiento</strong> — Corrección de incidencias y prevención de fallas.</li><li><strong>Mejora continua</strong> — Nuevas funcionalidades y ajustes evolutivos.</li><li><strong>SLA flexible</strong> — Niveles de servicio adaptados a tu operación.</li></ul></div></article>
+        </div>
+      </div>
+
+      
+      <div class="fam" id="f04">
+        <div class="fam-title"><span class="n">04</span><h3>Servicios especializados</h3><span class="ph">Transversal</span></div>
+        <div class="cards">
+          <article class="card"><span class="cic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg></span><h3>Consultoría en ciberseguridad</h3><p>Protección de tu información y tus activos digitales con controles y mejores prácticas.</p><button type="button" class="more" aria-expanded="false" aria-controls="extra-c04-1">Ver más <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></button><div class="extra" id="extra-c04-1"><ul><li><strong>Auditoría</strong> — Evaluación de vulnerabilidades y análisis de riesgos.</li><li><strong>Protección de datos</strong> — Controles de acceso, cifrado y cumplimiento normativo.</li><li><strong>Continuidad</strong> — Plan de recuperación ante desastres y respaldos.</li><li><strong>Capacitación</strong> — Formación del equipo en mejores prácticas de seguridad.</li></ul></div></article>
+          <article class="card"><span class="cic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></span><h3>Consultoría en marketing digital</h3><p>Estrategias para la visibilidad de tu marca y la generación de nuevos clientes.</p><button type="button" class="more" aria-expanded="false" aria-controls="extra-c04-2">Ver más <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></button><div class="extra" id="extra-c04-2"><ul><li><strong>Estrategia</strong> — Plan de contenido y posicionamiento multicanal.</li><li><strong>Campañas</strong> — Gestión de redes sociales, SEM y exhibición.</li><li><strong>Automatización</strong> — Email marketing y nurturing de leads.</li><li><strong>Analítica</strong> — Reportes de rendimiento y optimización continua.</li></ul></div></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></span>Cómo trabajamos</span>
+        <h2>Un método claro, de principio a fin</h2>
+        <p>Cada proyecto sigue un proceso probado que te da visibilidad y control en cada etapa.</p>
+      </div>
+      
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><h3>Diagnóstico</h3><p>Entendemos tus procesos, retos y objetivos antes de proponer nada.</p></div>
+        <div class="step"><div class="sn">2</div><h3>Diseño</h3><p>Definimos el alcance, la configuración y los desarrollos a medida.</p></div>
+        <div class="step"><div class="sn">3</div><h3>Implementación</h3><p>Ponemos en marcha la plataforma y capacitamos a tu equipo.</p></div>
+        <div class="step"><div class="sn">4</div><h3>Acompañamiento</h3><p>Soporte y optimización continua para que el sistema evolucione contigo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  
+  
+  <section class="section alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v9h4"></path><path d="M18 9h2a2 2 0 0 1 2 2v9h-4"></path><path d="M10 3h4a2 2 0 0 1 2 2v15H8V5a2 2 0 0 1 2-2z"></path></svg></span>Resultados</span>
+        <h2>Empresas que ya operan mejor con XPIÁ</h2>
+        <p>El respaldo de proyectos reales en distintos sectores de todo México.</p>
+      </div>
+      
+      <div class="stats">
+        <div><div class="num">+150</div><div class="lbl">Proyectos implementados</div></div>
+        <div><div class="num">+10</div><div class="lbl">Años de experiencia</div></div>
+        <div><div class="num">98%</div><div class="lbl">Satisfacción del cliente</div></div>
+        <div><div class="num">24/7</div><div class="lbl">Soporte continuo</div></div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="xpia-trusted-band" aria-label="Empresas que confían en XPIÁ">
+    
+    <p class="kicker">Empresas de todo México confían en XPIÁ</p>
+    <div class="marquee-wrap">
+      <div class="marquee-track" aria-label="Logotipos de clientes">
+        
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/CHAPU.png" alt="Chapu" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/COFRADIA.jpg" alt="Cofradía" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/CUSPIDE.jpg" alt="Cúspide" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/DEGUZMAN.jpg" alt="De Guzmán" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/DELIZZIA.jpg" alt="Delizzia" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/HIMEX.png" alt="Himex" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/INSIDE.png" alt="Inside" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/IRRIMICH.png" alt="Irrimich" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/KEY%20SOLUTIONS.png" alt="Key Solutions" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LEXIE.jpg" alt="Lexie" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20AVO%20PACK%20SCRIPT.png" alt="Avo Pack" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20CANACO%20COLIMA.png" alt="Canaco Colima" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20CONSTRURAMA.png" alt="Construrama" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20IDEAN%20ARCH.png" alt="Idean Arch" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20PUBLIMEDIOS.png" alt="Publimedios" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20RIVIERA%20MAYA%20CHICO.png" alt="Riviera Maya" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20TOVALDOS.png" alt="Tovaldos" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGOtarsmx%20CHICO.png" alt="Tarsmx" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/NIT%20IRRIGACION.png" alt="NIT Irrigación" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/NUMMEX.png" alt="Nummex" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/PepsiCo_logo.png" alt="PepsiCo" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/SAMAR.png" alt="Samar" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/ZEED.jpg" alt="Zeed" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/logo%20G.png" alt="Logo G" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://xx1nhzufuipctpue.public.blob.vercel-storage.com/test-web1-xpia/evobike.png" alt="Evobike" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://xx1nhzufuipctpue.public.blob.vercel-storage.com/test-web1-xpia/consorcioferretero.png" alt="Consorcio Ferretero" width="220" height="72" loading="lazy" decoding="async"></span>
+        
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/CHAPU.png" alt="Chapu" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/COFRADIA.jpg" alt="Cofradía" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/CUSPIDE.jpg" alt="Cúspide" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/DEGUZMAN.jpg" alt="De Guzmán" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/DELIZZIA.jpg" alt="Delizzia" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/HIMEX.png" alt="Himex" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/INSIDE.png" alt="Inside" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/IRRIMICH.png" alt="Irrimich" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/KEY%20SOLUTIONS.png" alt="Key Solutions" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LEXIE.jpg" alt="Lexie" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20AVO%20PACK%20SCRIPT.png" alt="Avo Pack" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20CANACO%20COLIMA.png" alt="Canaco Colima" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20CONSTRURAMA.png" alt="Construrama" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20IDEAN%20ARCH.png" alt="Idean Arch" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20PUBLIMEDIOS.png" alt="Publimedios" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20RIVIERA%20MAYA%20CHICO.png" alt="Riviera Maya" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20TOVALDOS.png" alt="Tovaldos" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGOtarsmx%20CHICO.png" alt="Tarsmx" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/NIT%20IRRIGACION.png" alt="NIT Irrigación" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/NUMMEX.png" alt="Nummex" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/PepsiCo_logo.png" alt="PepsiCo" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/SAMAR.png" alt="Samar" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/ZEED.jpg" alt="Zeed" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/logo%20G.png" alt="Logo G" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://xx1nhzufuipctpue.public.blob.vercel-storage.com/test-web1-xpia/evobike.png" alt="Evobike" width="220" height="72" loading="lazy" decoding="async"></span><span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-item"><img src="https://xx1nhzufuipctpue.public.blob.vercel-storage.com/test-web1-xpia/consorcioferretero.png" alt="Consorcio Ferretero" width="220" height="72" loading="lazy" decoding="async"></span>
+      </div>
+    </div>
+  </section>
+  
+  
+  <footer class="foot" aria-label="Pie de página">
+    <div class="wrap">
+      <div class="foot-grid">
+        
+        <div style="display:flex;flex-direction:column;align-items:flex-start;text-align:left;">
+          
+          <img src="https://xx1nhzufuipctpue.public.blob.vercel-storage.com/xpia/LOGO%20FIRMA.png" alt="XPIÁ Technology Solutions" width="200" height="64" style="height:3.2em;width:auto;display:block;margin:0 0 16px;filter:brightness(0) invert(1);" loading="lazy" decoding="async">
+          <p class="blurb">Transformamos empresas con tecnología Odoo. Más de 10 años impulsando la evolución digital en México.</p>
+          
+          <div style="display:flex;align-items:center;gap:10px;margin-top:20px;">
+            <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,0.38);font-weight:600;">Partner de</span>
+            <img src="https://giosyrabi.com/wp-content/uploads/2025/07/odoo_logo.png" alt="Odoo" width="80" height="24" style="height:1.3em;width:auto;display:block;filter:brightness(0) invert(1);opacity:0.55;" loading="lazy" decoding="async">
+          </div>
+        </div>
+        
+        <nav aria-label="Enlaces de empresa">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#industrias">Industrias</a></li>
+            <li><a href="#casos">Casos de éxito</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+        
+        <nav aria-label="Redes sociales">
+          <h4>Síguenos</h4>
+          <ul class="soc">
+            <li>
+              <a href="https://www.linkedin.com/company/xpia-technology-solutions/" target="_blank" rel="noopener noreferrer">
+                <span class="soc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></span>
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/xpiatech?igsh=MTJwYmVlOHFnanhycQ==" target="_blank" rel="noopener noreferrer">
+                <span class="soc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></span>
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/share/1D5wy8S1ff/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+                <span class="soc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></span>
+                Facebook
+              </a>
+            </li>
+          </ul>
+        </nav>
+        
+        <div>
+          <h4>Contacto</h4>
+          <ul class="cnt">
+            <li>
+              <a href="https://wa.me/523121234567" target="_blank" rel="noopener noreferrer">
+                <span class="cnt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.962-1.418A9.956 9.956 0 0 0 12 22c5.522 0 10-4.478 10-10S17.522 2 12 2z"></path></svg></span>
+                WhatsApp
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contacto@xpiatech.com">
+                <span class="cnt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></span>
+                contacto@xpiatech.com
+              </a>
+            </li>
+            <li>
+              <span>
+                <span class="cnt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                México
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="foot-bottom">
+        <span>© 2026 XPIÁ Technology Solutions. Todos los derechos reservados.</span>
+        <span lang="es">Hecho en México</span>
+      </div>
+    </div>
+  </footer>
+
+</main>
+</div>
+
+<script>
+(function(){
+  // Referencia al track flex que contiene los logos duplicados
+  var track=document.querySelector('.xpia-elevate .xpia-trusted-band .marquee-track');
+  if(!track)return;
+  // Respeta preferencia de usuario: animación reducida
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  // Activa clase que aplica will-change + backface-visibility para GPU
+  track.classList.add('js-driven');
+  // Estado interno: posición actual (px), pausa, mitad del ancho,
+  // timestamp del frame anterior, duración total del ciclo (ms)
+  var pos=0,paused=false,halfW=0,last=0,duration=55000;
+  // Calcula halfW como la mitad del ancho total del track.
+  // Cuando pos≥halfW, se resta halfW → la 2ª copia visual reemplaza a la 1ª sin saltos.
+  function resetWidth(){halfW=Math.ceil(track.scrollWidth/2);}
+  resetWidth();
+  // Recalcula cuando cargan imágenes lazy o cambia el viewport
+  window.addEventListener('load',resetWidth);
+  var ro=new ResizeObserver(resetWidth);ro.observe(track);
+  // Loop principal: rAF con delta-time para FPS independiente
+  function loop(now){
+    if(halfW&&!paused){
+      if(!last)last=now;                     // primer frame: inicializa last
+      var dt=now-last;last=now;              // delta desde el frame anterior (ms)
+      pos+=halfW/duration*dt;                // avance proporcional al tiempo real
+      if(pos>=halfW)pos-=halfW;              // loop seamless: rebota en vez de reiniciar
+      track.style.transform='translateX(-'+pos.toFixed(1)+'px)';  // aplica posición
+    }
+    requestAnimationFrame(loop);             // solicita el siguiente frame
+  }
+  requestAnimationFrame(loop);               // arranca el loop
+  // Pausa al hacer hover (mouse)
+  track.addEventListener('mouseenter',function(){paused=true;});
+  track.addEventListener('mouseleave',function(){paused=false;});
+  // Pausa al tocar (móvil)
+  track.addEventListener('touchstart',function(){paused=true;},{passive:true});
+  track.addEventListener('touchend',function(){paused=false;},{passive:true});
+  // Pausa al cambiar de pestaña; al volver, reinicia last para evitar dt gigante
+  document.addEventListener('visibilitychange',function(){
+    if(document.visibilityState==='hidden'){paused=true;}
+    else{paused=false;last=0;}
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+  var root = document.querySelector('.xpia-elevate');
+  if(!root) return;
+
+  function toggleCard(card) {
+    card.classList.toggle('expanded');
+    var expanded = card.classList.contains('expanded') ? 'true' : 'false';
+    // Bento: el aria-expanded está en la card misma
+    if(card.closest('.bento')) {
+      card.setAttribute('aria-expanded', expanded);
+    } else {
+      // Catálogo: el aria-expanded está en .more dentro de la card
+      var more = card.querySelector('.more');
+      if(more) more.setAttribute('aria-expanded', expanded);
+    }
+  }
+
+  root.addEventListener('click', function(e){
+    var card;
+    if((card = e.target.closest('.card')) && e.target.closest('.more')){
+      toggleCard(card);
+      return;
+    }
+    if((card = e.target.closest('.card')) && e.target.closest('.bento')){
+      toggleCard(card);
+    }
+  });
+
+  root.addEventListener('keydown', function(e){
+    if(e.key !== 'Enter' && e.key !== ' ') return;
+    // Catálogo: Enter/Space en .more button togglea la card
+    if(e.target.classList.contains('more')){
+      e.preventDefault();
+      var card = e.target.closest('.card');
+      if(card) toggleCard(card);
+      return;
+    }
+    // Bento: Enter/Space en la card misma (role=button)
+    if(e.target.closest('.bento') && e.target.getAttribute('role') === 'button'){
+      e.preventDefault();
+      toggleCard(e.target);
+    }
+  });
+})();
+</script>
+
+
+<aside class="xpfab-root" id="xpfab-root" aria-label="Consultor virtual Xpiá">
+  <div class="xpfab-panel" id="xpfab-panel">
+    <div class="xpfab-card">
+      <div class="xpfab-topbar">
+        <div class="xpfab-av" aria-hidden="true"><i class="ti ti-robot"></i></div>
+        <div class="xpfab-tb-info">
+          <span class="xpfab-tb-label">Consultor Virtual</span>
+          <span class="xpfab-tb-name">Xpiá IA</span>
+          <span class="xpfab-tb-status"><span class="xpfab-online" aria-hidden="true"></span> En línea — respuesta inmediata</span>
+        </div>
+        <button class="xpfab-reset-btn" id="xpfab-reset" aria-label="Iniciar nueva conversación"><i class="ti ti-refresh" aria-hidden="true"></i> Nueva</button>
+        <button class="xpfab-close" id="xpfab-close" aria-label="Cerrar consultor virtual">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+        </button>
+      </div>
+      <div class="xpfab-body" id="xpfab-body" role="log" aria-live="polite" aria-label="Mensajes del chat">
+        <div class="xpfab-msg-bot">
+          <div class="xpfab-msg-av" aria-hidden="true"><i class="ti ti-sparkles"></i></div>
+          <div class="xpfab-bubble-bot" id="xpfab-init"></div>
+        </div>
+      </div>
+      <div class="xpfab-typing" id="xpfab-typing" aria-hidden="true">
+        <div class="xpfab-msg-av" aria-hidden="true"><i class="ti ti-sparkles"></i></div>
+        <div class="xpfab-typing-bubble" aria-label="Escribiendo...">
+          <div class="xpfab-td"></div><div class="xpfab-td"></div><div class="xpfab-td"></div>
+        </div>
+      </div>
+      <div class="xpfab-chips" id="xpfab-chips" role="group" aria-label="Industrias predefinidas">
+        <button class="xpfab-chip" data-xpfab-fill="Tengo una clínica con 20 empleados, quiero mejorar la gestión de citas y expedientes."><span>🏡 Clínica / salud</span></button>
+        <button class="xpfab-chip" data-xpfab-fill="Soy distribuidor de alimentos con 40 empleados, necesito optimizar inventario y pedidos."><span>🚚 Distribuidora</span></button>
+        <button class="xpfab-chip" data-xpfab-fill="Tengo una empresa de manufactura con 80 personas, busco reducir tiempos de paro de máquinas."><span>🏭 Manufactura</span></button>
+        <button class="xpfab-chip" data-xpfab-fill="Tengo un despacho contable con 12 personas, quiero automatizar reportes y facturación."><span>📊 Despacho contable</span></button>
+        <button class="xpfab-chip" data-xpfab-fill="Tengo un restaurante con 3 sucursales y quiero mejorar control de costos e inventario."><span>🍴 Restaurante</span></button>
+        <button class="xpfab-chip" data-xpfab-fill="Tengo una tienda retail con 2 sucursales y quiero predecir demanda y reducir merma."><span>🛍 Retail</span></button>
+        <button class="xpfab-chip" data-xpfab-fill="Tengo una constructora con 50 empleados, quiero mejorar control de obra y costos."><span>🏛 Construcción</span></button>
+        <button class="xpfab-chip" data-xpfab-fill="Tengo una institución educativa y quiero automatizar administración y comunicación con alumnos."><span>🎓 Educación</span></button>
+      </div>
+      <div class="xpfab-footer">
+        <div class="xpfab-input-row">
+          <label for="xpfab-input" class="sr-only">Describe tu empresa y reto operativo</label>
+          <input class="xpfab-input" id="xpfab-input" type="text" placeholder="Ej: Distribuidora con 40 empleados..." autocomplete="off" enterkeyhint="send">
+          <button class="xpfab-send-btn" id="xpfab-send" aria-label="Enviar mensaje"><i class="ti ti-send" aria-hidden="true"></i><span>Analizar</span></button>
+        </div>
+        <span class="xpfab-hint">Sin costo &nbsp;·&nbsp; Sin compromiso &nbsp;·&nbsp; Respuesta IA instantánea</span>
+      </div>
+    </div>
+  </div>
+  <div class="xpfab-trigger">
+    <button class="xpfab-label-pill" id="xpfab-pill" aria-label="Abrir consultor virtual Xpiá">
+      <div class="xpfab-pill-top">
+        <span class="xpfab-pill-dot" aria-hidden="true"></span>
+        <span class="xpfab-pill-tag">Consultor Virtual · IA</span>
+      </div>
+      <span class="xpfab-pill-msg" id="xpfab-pill-msg">Diagnóstico gratis en 60 seg →</span>
+    </button>
+    <button class="xpfab-btn" id="xpfab-btn" aria-label="Abrir consultor virtual Xpiá">
+      <div class="xpfab-ring" aria-hidden="true"></div>
+      <img src="https://xx1nhzufuipctpue.public.blob.vercel-storage.com/mascota-avatar/Xpi_project_vector.svg" alt="" width="60" height="60" loading="lazy">
+    </button>
+  </div>
+</aside>
+
+<script defer="">
+(function(){
+'use strict';
+var WA_NUMBER = '523122701720';
+var APPT_URL  = '/appointment';
+var FR={
+  clinica:'Diagn\u00f3stico Xpi\u00e1 para tu Cl\u00ednica \u2014 implementaci\u00f3n Odoo\n\nOdoo es la soluci\u00f3n ideal para cl\u00ednicas porque centraliza citas, expedientes, facturaci\u00f3n y n\u00f3mina en una sola plataforma \u2014 sin costosos sistemas independientes que no se comunican entre s\u00ed.\n\nLo que implementamos con Odoo:\n\n1. Agenda m\u00e9dica inteligente\nOdoo Appointments gestiona citas en l\u00ednea y por WhatsApp, manda recordatorios autom\u00e1ticos y elimina huecos en la agenda \u2014 hasta 30% m\u00e1s consultas por d\u00eda.\n\n2. Expediente cl\u00ednico integrado\nCada paciente tiene historial, recetas, estudios y facturas en un solo registro. El m\u00e9dico lo ve en segundos, sin buscar en carpetas o sistemas separados.\n\n3. Facturaci\u00f3n electr\u00f3nica al instante\nOdoo genera CFDIs autom\u00e1ticamente al cerrar cada consulta \u2014 cero errores de captura, cero tiempo perdido en contabilidad.\n\nPor qu\u00e9 Xpi\u00e1: somos implementadores certificados de Odoo con m\u00e1s de 10 a\u00f1os de experiencia en M\u00e9xico. Conocemos la localizaci\u00f3n fiscal, el SAT y los procesos del sector salud.\n\nAgendemos 30 min sin costo para mostrarte el sistema en vivo.',
+  distribuidora:'Diagn\u00f3stico Xpi\u00e1 para tu Distribuidora \u2014 implementaci\u00f3n Odoo\n\nOdoo es el ERP preferido por distribuidoras porque unifica compras, inventario, ventas, log\u00edstica y facturaci\u00f3n en tiempo real \u2014 algo que sistemas como CONTPAQi o ASPEL no logran solos.\n\nLo que implementamos con Odoo:\n\n1. Inventario y pedidos en tiempo real\nOdoo Inventory controla existencias en almac\u00e9n y en ruta. Cuando el stock baja del m\u00ednimo, genera la orden de compra autom\u00e1ticamente \u2014 cero quiebres de stock.\n\n2. Rutas de entrega optimizadas\nOdoo Delivery planifica y asigna rutas considerando volumen, zona y horario \u2014 m\u00e1s entregas por cami\u00f3n, menos combustible.\n\n3. Facturaci\u00f3n CFDI masiva\nOdoo genera y timbra facturas electr\u00f3nicas en segundos al confirmar cada pedido \u2014 tus clientes reciben su comprobante antes de que el repartidor salga del almac\u00e9n.\n\nPor qu\u00e9 Xpi\u00e1: llevamos m\u00e1s de 10 a\u00f1os implementando Odoo para distribuidoras en M\u00e9xico. Sabemos configurar el m\u00f3dulo de inventario, las reglas de reabasto y la localizaci\u00f3n fiscal mexicana desde el d\u00eda uno.\n\nAgendemos una sesi\u00f3n para mostrarte el ROI exacto en tu operaci\u00f3n.',
+  manufactura:'Diagn\u00f3stico Xpi\u00e1 para tu Empresa de Manufactura \u2014 implementaci\u00f3n Odoo\n\nOdoo Manufacturing es uno de los m\u00f3dulos m\u00e1s potentes de la plataforma: planea producci\u00f3n, controla materiales, gestiona \u00f3rdenes de trabajo y calcula costos reales \u2014 todo integrado con ventas y compras.\n\nLo que implementamos con Odoo:\n\n1. \u00d3rdenes de producci\u00f3n y MRP\nOdoo calcula autom\u00e1ticamente qu\u00e9 producir, cu\u00e1ndo y con qu\u00e9 materiales seg\u00fan tus pedidos \u2014 sin hojas de Excel ni cuellos de botella en planeaci\u00f3n.\n\n2. Control de calidad integrado\nOdoo Quality registra puntos de control en cada fase del proceso. Los defectos quedan documentados y trazados antes de llegar al cliente.\n\n3. Costos reales de producci\u00f3n\nOdoo calcula el costo real por orden \u2014 materiales + mano de obra + tiempo de m\u00e1quina \u2014 para que sepas exactamente cu\u00e1nto te cuesta cada producto.\n\nPor qu\u00e9 Xpi\u00e1: implementamos Odoo Manufacturing en plantas de manufactura, agroindustria y metal-mec\u00e1nica en M\u00e9xico. Conocemos los retos reales de piso de producci\u00f3n.\n\nAgendemos un diagn\u00f3stico sin costo en tu planta.',
+  contable:'Diagn\u00f3stico Xpi\u00e1 para tu Despacho Contable \u2014 implementaci\u00f3n Odoo\n\nOdoo Accounting es un m\u00f3dulo contable completo, 100% compatible con el SAT mexicano: genera CFDIs, complementos de pago, declaraciones y p\u00f3lizas autom\u00e1ticamente \u2014 sin depender solo de CONTPAQi.\n\nLo que implementamos con Odoo:\n\n1. Contabilidad mexicana nativa\nOdoo viene preconfigurado con el cat\u00e1logo de cuentas SAT, timbrado de CFDI 4.0, complementos de n\u00f3mina y conciliaci\u00f3n bancaria autom\u00e1tica \u2014 todo dentro del mismo sistema.\n\n2. Portal de clientes integrado\nCada cliente tuyo tiene acceso a su portal en Odoo para ver facturas, aprobar documentos y hacer pagos en l\u00ednea \u2014 menos llamadas, menos correos.\n\n3. Reportes fiscales automatizados\nOdoo genera DIOT, balanza de comprobaci\u00f3n y declaraci\u00f3n mensual listos para validar \u2014 el cierre que antes tomaba d\u00edas ahora toma horas.\n\nPor qu\u00e9 Xpi\u00e1: implementamos Odoo Accounting con localizaci\u00f3n mexicana certificada. Nuestro equipo conoce el SAT, el CFDI 4.0 y las necesidades espec\u00edficas de los despachos contables.\n\nAgendemos una demo de 30 min con un caso real de despacho.',
+  restaurante:'Diagn\u00f3stico Xpi\u00e1 para tu Restaurante \u2014 implementaci\u00f3n Odoo\n\nOdoo integra punto de venta, inventario, compras y contabilidad en un solo sistema \u2014 sin que tu POS, tu almac\u00e9n y tu contabilidad vivan en plataformas que no se hablan.\n\nLo que implementamos con Odoo:\n\n1. Punto de venta integrado con cocina\nOdoo POS conecta la caja con las pantallas de cocina y con el inventario en tiempo real \u2014 cada venta descuenta autom\u00e1ticamente los ingredientes usados.\n\n2. Control de inventario y merma\nOdoo Inventory lleva el costo real de cada platillo y detecta diferencias entre consumo te\u00f3rico y real \u2014 sabes exactamente d\u00f3nde se pierde dinero.\n\n3. Compras y proveedores centralizados\nOdoo Purchase gestiona \u00f3rdenes a proveedores, compara precios y controla recepciones \u2014 sin sorpresas en el costo de insumos.\n\nPor qu\u00e9 Xpi\u00e1: hemos implementado Odoo en restaurantes y cadenas de alimentos en M\u00e9xico. Conocemos los retos de operaci\u00f3n en m\u00faltiples sucursales y la integraci\u00f3n con impresoras fiscales.\n\nAgendemos una sesi\u00f3n para mostrarte el sistema con tu operaci\u00f3n actual.',
+  retail:'Diagn\u00f3stico Xpi\u00e1 para tu Negocio Retail \u2014 implementaci\u00f3n Odoo\n\nOdoo unifica tu punto de venta, ecommerce, inventario y contabilidad en una sola plataforma \u2014 algo que Shopify, Vend o sistemas de caja aislados no pueden dar.\n\nLo que implementamos con Odoo:\n\n1. POS + ecommerce sincronizados\nOdoo Point of Sale y Odoo Website eCommerce comparten el mismo inventario en tiempo real \u2014 lo que se vende en tienda se descuenta en l\u00ednea al instante.\n\n2. Gesti\u00f3n de inventario multi-sucursal\nOdoo Inventory controla existencias por sucursal, genera reposiciones autom\u00e1ticas y permite transferencias entre tiendas con un clic.\n\n3. Programa de lealtad y CRM\nOdoo gestiona puntos, descuentos y seguimiento de clientes frecuentes \u2014 todo integrado con la caja, sin apps externas.\n\nPor qu\u00e9 Xpi\u00e1: implementamos Odoo en tiendas retail y comercios con m\u00faltiples sucursales en M\u00e9xico. Conocemos los retos de inventario, facturaci\u00f3n y atenci\u00f3n al cliente en piso de venta.\n\nAgendemos 30 min para mostrarte el sistema con tu cat\u00e1logo actual.',
+  construccion:'Diagn\u00f3stico Xpi\u00e1 para tu Constructora \u2014 implementaci\u00f3n Odoo\n\nOdoo Project y Odoo Purchase integran control de obra, compras de materiales, subcontratistas y facturaci\u00f3n en una sola plataforma \u2014 sin hojas de Excel que nadie actualiza.\n\nLo que implementamos con Odoo:\n\n1. Control de proyectos y avance de obra\nOdoo Project registra tareas, avances, horas trabajadas y materiales por proyecto \u2014 el director de obra ve el estatus en tiempo real desde el celular.\n\n2. Compras y control de materiales\nOdoo Purchase gestiona \u00f3rdenes a proveedores, recepciones en obra y comparaci\u00f3n de precios \u2014 el costo real de cada proyecto siempre visible.\n\n3. Facturaci\u00f3n por avance de obra\nOdoo genera estimaciones y facturas por porcentaje de avance con un clic \u2014 menos tiempo administrativo, m\u00e1s tiempo en obra.\n\nPor qu\u00e9 Xpi\u00e1: hemos implementado Odoo en constructoras y empresas de servicios de ingenier\u00eda en M\u00e9xico. Sabemos adaptar los m\u00f3dulos al ciclo real de un proyecto de construcci\u00f3n.\n\nAgendemos una sesi\u00f3n sin costo para revisar tu operaci\u00f3n actual.',
+  educacion:'Diagn\u00f3stico Xpi\u00e1 para tu Instituci\u00f3n Educativa \u2014 implementaci\u00f3n Odoo\n\nOdoo centraliza inscripciones, colegiaturas, comunicaci\u00f3n con padres y contabilidad en una sola plataforma \u2014 sin depender de sistemas educativos costosos que no se integran con tu contabilidad.\n\nLo que implementamos con Odoo:\n\n1. Gesti\u00f3n de inscripciones y alumnos\nOdoo CRM y Contacts gestionan el proceso de inscripci\u00f3n desde el primer contacto hasta la matr\u00edcula \u2014 sin perder ning\u00fan prospecto.\n\n2. Facturaci\u00f3n de colegiaturas\nOdoo genera autom\u00e1ticamente los recibos de pago mensuales con CFDI, env\u00eda recordatorios de vencimiento y registra pagos en l\u00ednea \u2014 la cartera siempre al d\u00eda.\n\n3. Comunicaci\u00f3n centralizada\nOdoo Email Marketing y el portal de clientes mantienen a padres informados de eventos, calificaciones y avisos \u2014 sin grupos de WhatsApp desorganizados.\n\nPor qu\u00e9 Xpi\u00e1: hemos implementado Odoo en colegios y centros de capacitaci\u00f3n en M\u00e9xico. Conocemos los ciclos escolares, las necesidades de cobranza y la facturaci\u00f3n educativa.\n\nAgendemos una demo de 30 min con un caso real de instituci\u00f3n educativa.',
+  tiempo:'Tiempo de implementaci\u00f3n con Xpi\u00e1 + Odoo\n\nOdoo se implementa por m\u00f3dulos, lo que significa que puedes tener resultados en semanas \u2014 no en a\u00f1os como con otros ERPs.\n\nFase 1 \u2014 Arranque (2\u20134 semanas)\nConfiguraci\u00f3n base de Odoo, migraci\u00f3n de datos clave (clientes, productos, inventario inicial) y capacitaci\u00f3n del equipo. Tu operaci\u00f3n diaria corre desde el d\u00eda uno.\n\nFase 2 \u2014 M\u00f3dulos core (4\u20138 semanas)\nActivamos ventas, compras, inventario, facturaci\u00f3n electr\u00f3nica CFDI y contabilidad. Todo conectado, sin doble captura.\n\nFase 3 \u2014 Optimizaci\u00f3n (mes 3+)\nActivamos reportes avanzados, automatizaciones espec\u00edficas de tu industria y m\u00f3dulos adicionales seg\u00fan tu crecimiento.\n\nPor qu\u00e9 Odoo con Xpi\u00e1 es m\u00e1s r\u00e1pido: Odoo es una plataforma modular lista para usar. Xpi\u00e1 ya tiene plantillas de implementaci\u00f3n probadas en empresas mexicanas \u2014 no empezamos desde cero contigo.\n\n\u00bfAgendamos 30 minutos para definir tu plan de arranque?',
+  costo:'Costo de implementaci\u00f3n Odoo con Xpi\u00e1\n\nOdoo tiene una ventaja enorme frente a SAP, Oracle o Microsoft Dynamics: el costo de licencia es significativamente menor y la implementaci\u00f3n es m\u00e1s r\u00e1pida.\n\nReferencia de inversi\u00f3n:\n\nImplementaci\u00f3n base Odoo (ventas + inventario + facturaci\u00f3n)\nDesde $35,000 MXN \u2014 configuraci\u00f3n, migraci\u00f3n de datos y capacitaci\u00f3n.\n\nImplementaci\u00f3n completa (+ contabilidad, compras, CRM, n\u00f3mina)\n$70,000 \u2013 $150,000 MXN seg\u00fan el alcance y n\u00famero de usuarios.\n\nOdoo SaaS (nube) \u2014 licencia mensual\nDesde $385 MXN/usuario/mes. Xpi\u00e1 te ayuda a seleccionar el plan correcto.\n\nSoporte mensual Xpi\u00e1 post-implementaci\u00f3n\nDesde $4,500 MXN/mes \u2014 actualizaciones, ajustes y soporte de tu equipo.\n\nROI t\u00edpico: nuestros clientes en M\u00e9xico recuperan la inversi\u00f3n en 4 a 8 meses gracias al ahorro en tiempo de captura, errores de facturaci\u00f3n y control de inventario.\n\n\u00bfQuieres que preparemos una propuesta con el desglose exacto para tu empresa?',
+  empezar:'Por d\u00f3nde empezar tu implementaci\u00f3n Odoo con Xpi\u00e1\n\nLa regla de Xpi\u00e1: arranca por el proceso que m\u00e1s duele y donde ya tienes datos \u2014 los resultados llegan en semanas.\n\nLos m\u00f3dulos de Odoo por los que m\u00e1s empresas mexicanas empiezan:\n\n\u2713 Facturaci\u00f3n electr\u00f3nica (CFDI 4.0)\nResultado inmediato: cero errores de timbrado, facturas en segundos.\n\n\u2713 Inventario y almac\u00e9n\nResultado inmediato: sabes exactamente cu\u00e1nto tienes y d\u00f3nde \u2014 sin conteos manuales.\n\n\u2713 Ventas y CRM\nResultado inmediato: seguimiento de cada oportunidad, cotizaciones profesionales y pedidos sin errores.\n\nPor qu\u00e9 Odoo es la mejor opci\u00f3n para empezar: es la \u00fanica plataforma donde todos los m\u00f3dulos est\u00e1n integrados de f\u00e1brica. No necesitas conectores ni integraciones costosas entre sistemas.\n\nXpi\u00e1 hace el diagn\u00f3stico inicial sin costo para definir tu m\u00f3dulo de arranque ideal.\n\n\u00bfAgendamos 30 minutos esta semana?',
+  default:'Diagn\u00f3stico Xpi\u00e1 \u2014 implementaci\u00f3n Odoo para tu empresa\n\nOdoo es el ERP de m\u00e1s r\u00e1pido crecimiento en el mundo y la mejor opci\u00f3n para empresas medianas en M\u00e9xico: integra m\u00e1s de 30 m\u00f3dulos de negocio en una sola plataforma, a una fracci\u00f3n del costo de SAP o Microsoft Dynamics.\n\nLo que Xpi\u00e1 implementa en tu empresa:\n\n1. Un solo sistema para toda la operaci\u00f3n\nVentas, compras, inventario, contabilidad, n\u00f3mina, CRM y m\u00e1s \u2014 todos conectados. Lo que pasa en ventas se refleja autom\u00e1ticamente en almac\u00e9n y en contabilidad.\n\n2. Facturaci\u00f3n electr\u00f3nica mexicana incluida\nOdoo viene con localizaci\u00f3n fiscal para M\u00e9xico: CFDI 4.0, complemento de n\u00f3mina, DIOT y conciliaci\u00f3n bancaria \u2014 sin m\u00f3dulos externos ni costos adicionales.\n\n3. Implementaci\u00f3n r\u00e1pida y a la medida\nXpi\u00e1 configura Odoo seg\u00fan los procesos reales de tu empresa \u2014 no al rev\u00e9s. Empezamos por los m\u00f3dulos que generan valor inmediato y crecemos contigo.\n\nPor qu\u00e9 Xpi\u00e1: somos implementadores de Odoo con m\u00e1s de 10 a\u00f1os de experiencia y m\u00e1s de 150 proyectos exitosos en M\u00e9xico. Conocemos la realidad operativa y fiscal de las empresas mexicanas.\n\nAgendemos 30 min sin costo. Te mostramos Odoo funcionando con tu industria.'
+};
+var _R=[
+  [/cl[i\u0301]nica|salud|citas|expediente/,'clinica'],
+  [/distribu|alimento|inventario|pedido/,'distribuidora'],
+  [/manufactura|planta|m[a\u0301]quina|paro|producci/,'manufactura'],
+  [/contable|contadu|factura|fiscal|reporte/,'contable'],
+  [/restaurante|platillo|merma/,'restaurante'],
+  [/retail|tienda|moda|ropa|comercio/,'retail'],
+  [/construc|obra|inmueble|inmobil|vivienda/,'construccion'],
+  [/educa|escuela|colegio|alumno|maestro|univers/,'educacion'],
+  [/tiempo|tarda|demora|implementar/,'tiempo'],
+  [/costo|precio|cuesta|inversi/,'costo'],
+  [/empezar|primero|recomiendas|por\s+d/,'empezar'],
+];
+function getR(t){t=(t||'').toLowerCase().slice(0,500);for(var i=0;i<_R.length;i++)if(_R[i][0].test(t))return FR[_R[i][1]];return FR.default;}
+var INIT='\u00a1Hola! Soy el consultor virtual de Xpi\u00e1\n\ud83d\udc4b\n\u00bfA qu\u00e9 se dedica tu empresa y cu\u00e1l es tu principal reto operativo hoy?';
+function type(el,txt,cb){
+  var i=0,chunk=Math.max(1,Math.ceil(txt.length/90));el.textContent='';
+  var t=setInterval(function(){i=Math.min(i+chunk,txt.length);el.textContent=txt.slice(0,i);if(i>=txt.length){clearInterval(t);if(cb)cb();}},14);
+}
+var root=document.getElementById('xpfab-root'),panel=document.getElementById('xpfab-panel'),
+    fabBtn=document.getElementById('xpfab-btn'),closeBtn=document.getElementById('xpfab-close'),
+    resetBtn=document.getElementById('xpfab-reset'),body=document.getElementById('xpfab-body'),
+    typing=document.getElementById('xpfab-typing'),chips=document.getElementById('xpfab-chips'),
+    input=document.getElementById('xpfab-input'),send=document.getElementById('xpfab-send');
+var _last=0;
+function openP(){panel.classList.add('xpfab-open');root.classList.add('xpfab-open');setTimeout(function(){if(input)input.focus();},300);}
+function closeP(){panel.classList.remove('xpfab-open');root.classList.remove('xpfab-open');}
+if(fabBtn)fabBtn.addEventListener('click',function(){panel.classList.contains('xpfab-open')?closeP():openP();});
+var pillBtn=document.getElementById('xpfab-pill');
+if(pillBtn)pillBtn.addEventListener('click',function(){panel.classList.contains('xpfab-open')?closeP():openP();});
+if(closeBtn)closeBtn.addEventListener('click',function(e){e.stopPropagation();closeP();});
+document.addEventListener('click',function(e){if(panel&&panel.classList.contains('xpfab-open')&&root&&!root.contains(e.target))closeP();});
+function doReset(){
+  if(!body)return;
+  body.innerHTML='';
+  var r=document.createElement('div');r.className='xpfab-msg-bot';
+  var a=document.createElement('div');a.className='xpfab-msg-av';a.innerHTML='<i class="ti ti-sparkles"></i>';
+  var b=document.createElement('div');b.className='xpfab-bubble-bot';b.id='xpfab-init';
+  r.appendChild(a);r.appendChild(b);body.appendChild(r);
+  document.querySelectorAll('.xpfab-wa,.xpfab-fw').forEach(function(el){el.remove();});
+  if(chips)chips.style.display='';if(input){input.value='';input.disabled=false;}if(send)send.disabled=false;if(typing)typing.style.display='none';
+  setTimeout(function(){var el=document.getElementById('xpfab-init');if(el)type(el,INIT);},200);
+}
+if(resetBtn)resetBtn.addEventListener('click',doReset);
+function doSend(){
+  var now=Date.now();if(now-_last<2500)return;_last=now;
+  var text=input?input.value.trim():'';if(!text||!body)return;text=text.slice(0,500);
+  var ub=document.createElement('div');ub.className='xpfab-bubble-user';ub.textContent=text;
+  body.appendChild(ub);body.scrollTop=body.scrollHeight;
+  if(input){input.value='';input.disabled=true;}if(send)send.disabled=true;
+  if(chips)chips.style.display='none';if(typing)typing.style.display='flex';
+  setTimeout(function(){
+    if(typing)typing.style.display='none';
+    var reply=getR(text);
+    var row=document.createElement('div');row.className='xpfab-msg-bot xpfab-msg-bot-anim';
+    var av=document.createElement('div');av.className='xpfab-msg-av';av.innerHTML='<i class="ti ti-sparkles"></i>';
+    var bub=document.createElement('div');bub.className='xpfab-bubble-bot';
+    row.appendChild(av);row.appendChild(bub);body.appendChild(row);
+    row.scrollIntoView({behavior:'smooth',block:'nearest'});
+    type(bub,reply,function(){
+      var fw=document.createElement('div');fw.className='xpfab-fw';fw.style.cssText='display:flex;flex-wrap:wrap;gap:7px;padding:0 1.5rem .75rem;background:#F7F6FA;';
+      [
+        ['\u00bfCu\u00e1nto tiempo tomar\u00eda implementar estas soluciones?','\u23f1 \u00bfCu\u00e1nto tiempo toma?'],
+        ['\u00bfCu\u00e1l es el costo aproximado de implementaci\u00f3n?','\ud83d\udcb0 \u00bfCu\u00e1l es el costo?'],
+        ['\u00bfPor cu\u00e1l de las 3 soluciones me recomiendas empezar?','\ud83d\ude80 \u00bfPor d\u00f3nde empezar?']
+      ].forEach(function(d){
+        var b2=document.createElement('button');b2.className='xpfab-chip';b2.dataset.xpfabFu=d[0];
+        var s=document.createElement('span');s.textContent=d[1];b2.appendChild(s);fw.appendChild(b2);
+      });
+      if(typing&&typing.parentNode)typing.parentNode.insertBefore(fw,typing);
+      var wa=document.createElement('div');wa.className='xpfab-wa xpfab-wa-cta';wa.style.cssText='margin:0 1.5rem .75rem;flex-direction:column;gap:8px;';
+      var wt=document.createElement('div');wt.className='xpfab-wa-text';wt.textContent='\u00bfListo para dar el siguiente paso?';
+      var wbtns=document.createElement('div');wbtns.style.cssText='display:flex;flex-wrap:wrap;gap:8px;';
+      var wl=document.createElement('a');wl.className='xpfab-wa-btn';
+      wl.href='https://wa.me/'+WA_NUMBER+'?text=Hola%2C%20quiero%20una%20consulta%20sobre%20Odoo%20para%20mi%20empresa';
+      wl.target='_blank';wl.rel='noopener noreferrer';wl.innerHTML='<i class="ti ti-brand-whatsapp"></i> WhatsApp';
+      var al=document.createElement('a');al.className='xpfab-appt-btn';al.href=APPT_URL;al.innerHTML='<i class="ti ti-calendar-event"></i> Agendar demo gratis';
+      wbtns.appendChild(wl);wbtns.appendChild(al);
+      wa.appendChild(wt);wa.appendChild(wbtns);
+      if(typing&&typing.parentNode)typing.parentNode.insertBefore(wa,typing);
+      fw.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+    if(input){input.disabled=false;input.focus();}if(send)send.disabled=false;
+  },1400+Math.random()*900);
+}
+if(send)send.addEventListener('click',doSend);
+if(input)input.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();doSend();}});
+document.addEventListener('click',function(e){
+  var fc=e.target.closest('[data-xpfab-fill]');
+  if(fc){e.preventDefault();if(input)input.value=fc.dataset.xpfabFill;doSend();return;}
+  var fu=e.target.closest('[data-xpfab-fu]');
+  if(fu){e.preventDefault();var r=fu.closest('.xpfab-fw');if(r)r.remove();if(input)input.value=fu.dataset.xpfabFu;doSend();}
+});
+setTimeout(function(){var el=document.getElementById('xpfab-init');if(el)type(el,INIT);},500);
+var _msgs=['Diagn\u00f3stico gratis en 60 seg \u2192','\u00bfCu\u00e1nto puedes ahorrar con IA?','+150 empresas ya lo usan \u2192','Sin costo \u00b7 Sin compromiso'];
+var _mi=0,_pillMsg=document.getElementById('xpfab-pill-msg');
+if(_pillMsg){
+  setInterval(function(){
+    _pillMsg.classList.add('xp-out');
+    setTimeout(function(){_mi=(_mi+1)%_msgs.length;_pillMsg.textContent=_msgs[_mi];_pillMsg.classList.remove('xp-out');},320);
+  },3500);
+}
+var hero=document.querySelector('.hero');
+if(hero){
+  var heroObs=new IntersectionObserver(function(entries){root.classList[entries[0].isIntersecting?'remove':'add']('xpfab-visible');},{threshold:0.1});
+  heroObs.observe(hero);
+}else if(root){root.classList.add('xpfab-visible');}
+})();
+</script>

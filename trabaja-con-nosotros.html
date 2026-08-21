@@ -1,0 +1,885 @@
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP Consultants</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&amp;display=swap" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css" crossorigin="anonymous">
+
+    <style>
+        :root {
+            --color-pink:        #CE007F;
+            --color-pink-light:  #EA5773;
+            --color-purple:      #6A388D;
+            --color-dark-purple: #2A2172;
+            --color-text:   #1a1a1a;
+            --color-muted:  #6b6b6b;
+            --color-bg:     #ffffff;
+            --color-bg-soft:#f7f5fa;
+            --font-main: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* ── SCROLL SUAVE ── */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main) !important; }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--color-text);
+            line-height: 1.6;
+            background: var(--color-bg);
+            font-weight: 400;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; display: block; height: auto; }
+
+        .page-wrapper { margin: 0 auto; overflow-x: hidden; flex: 1 0 auto; width: 100%; }
+
+        .container { max-width: 1440px; margin: 0 auto; padding: 0 clamp(20px,4vw,56px); }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--color-pink);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            margin-bottom: 16px;
+            background: rgba(206, 0, 127, 0.08);
+            padding: 6px 16px;
+            border-radius: 100px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--color-dark-purple);
+            line-height: 1.15;
+        }
+
+        h4 {
+            font-weight: 700;
+            color: var(--color-dark-purple);
+        }
+
+        p { color: var(--color-muted); font-weight: 400; }
+
+        /* ── BOTONES ── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none !important;
+            padding: 14px 32px;
+            border-radius: 100px;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-pink {
+            background: linear-gradient(135deg, var(--color-pink), var(--color-pink-light)) !important;
+            color: #ffffff !important;
+        }
+        .btn-pink:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(206, 0, 127, 0.3) !important;
+        }
+        .btn-outline {
+            background-color: transparent !important;
+            color: var(--color-dark-purple) !important;
+            border: 2px solid var(--color-dark-purple) !important;
+        }
+        .btn-outline:hover {
+            transform: translateY(-2px);
+        }
+        .btn-white {
+            background-color: #ffffff !important;
+            color: var(--color-pink) !important;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 18px 48px;
+        }
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255,255,255,0.2) !important;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            padding: 100px 0 0;   /* sin padding inferior: el carrusel se pega justo abajo */
+            text-align: center;
+            background:
+                linear-gradient(to bottom, transparent 55%, #ffffff 85%),
+                linear-gradient(135deg,rgba(42,33,114,.06) 0%,rgba(106,56,141,.04) 55%,rgba(206,0,127,.03) 100%);
+        }
+        .hero h1 { font-size: clamp(2.7rem, 6.5vw, 4.8rem); font-weight: 900; max-width: 900px; margin: 0 auto 24px; }
+        .hero p  { max-width: 650px; margin: 0 auto 32px; font-size: 1.2rem; font-weight: 500; }
+
+        .hero-image-container {
+            position: relative;
+            margin: 50px auto 0;
+            padding-bottom: 90px;
+            max-width: 900px;
+        }
+        .hero-image-container::before {
+            content: "";
+            position: absolute;
+            top: -60px; left: 50%;
+            width: 640px; height: 640px;
+            transform: translateX(-50%);
+            background: radial-gradient(circle, rgba(206,0,127,0.14), rgba(106,56,141,0.08) 45%, transparent 72%);
+            filter: blur(10px);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .hero-image {
+            position: relative;
+            z-index: 1;
+            border-radius: 28px;
+            overflow: hidden;
+            aspect-ratio: 16 / 8.2;
+            box-shadow: 0 30px 70px rgba(42,33,114,0.16);
+        }
+        .hero-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .hero-float-card {
+            position: absolute;
+            z-index: 2;
+            background: #fff;
+            border-radius: 18px;
+            padding: 14px 20px;
+            display: flex; align-items: center; gap: 12px;
+            box-shadow: 0 18px 40px rgba(42,33,114,0.18);
+        }
+        .hero-float-card .ic {
+            width: 40px; height: 40px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, var(--color-pink), var(--color-pink-light));
+            color: #fff; font-size: 1.1rem; flex-shrink: 0;
+        }
+        .hero-float-card strong { display: block; font-size: 1rem; color: var(--color-dark-purple); font-weight: 800; line-height: 1.1; }
+        .hero-float-card span { font-size: 0.75rem; color: var(--color-muted); font-weight: 600; }
+        .hero-float-card.card-left {
+            left: 14px; bottom: 40px;
+            transform: rotate(-4deg);
+            animation: float-frame 6s ease-in-out infinite;
+        }
+        .hero-float-card.card-right {
+            right: 14px; top: 30px;
+            transform: rotate(3deg);
+            animation: float-frame 6.5s ease-in-out infinite reverse;
+        }
+        @media (max-width: 640px) {
+            .hero-float-card { display: none; }
+        }
+
+        /* ── CLIENTS MARQUEE ── */
+        .clients-section {
+            /* fondo transparente: continúa visualmente el hero */
+            background: transparent;
+            padding: 0 0 50px;
+            text-align: center;
+        }
+
+        .clients-section h6 {
+            color: var(--color-muted);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 24px;
+        }
+
+        .clients-slider {
+            overflow: hidden;
+            padding: 16px 0;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .clients-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            gap: 56px;
+            animation: scroll 40s linear infinite;
+        }
+
+        .logo-item {
+            width: 190px; height: 72px;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .logo-item img {
+            width: 100%; height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .logo-sep {
+            width: 1px; height: 38px;
+            background: #e2dbe6;
+            flex-shrink: 0; align-self: center;
+        }
+
+        @keyframes scroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 20px)); }
+        }
+
+        /* Fades laterales que usan el mismo color de fondo del hero (blanco en la zona baja) */
+        .clients-slider::before,
+        .clients-slider::after {
+            content: "";
+            position: absolute; top: 0;
+            width: 120px; height: 100%; z-index: 2;
+            pointer-events: none;
+        }
+        .clients-slider::before {
+            left: 0;
+            background: linear-gradient(to right, #ffffff, transparent);
+        }
+        .clients-slider::after {
+            right: 0;
+            background: linear-gradient(to left, #ffffff, transparent);
+        }
+
+        /* ── ABOUT ── */
+        .about-section {
+            padding: 60px 0;
+            background: var(--color-bg-soft);
+        }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-content h2 { font-size: clamp(2.1rem, 4.2vw, 3.2rem); font-weight: 800; margin-bottom: 24px; }
+        .about-content p  { font-size: 1.1rem; font-weight: 500; margin-bottom: 24px; }
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .stat-card { background: #fff; padding: 24px; border-radius: 20px; border: 1px solid #eee5f0; }
+        .stat-card h3 { font-size: 2.6rem; font-weight: 900; color: var(--color-pink); margin-bottom: 8px; }
+        .stat-card p { font-weight: 600; }
+        .about-image-wrapper { position: relative; }
+        .about-image-wrapper > img { border-radius: 30px; width: 100%; }
+        .about-image-box {
+            position: absolute;
+            bottom: -30px; left: 16px;
+            background: linear-gradient(135deg, var(--color-pink), var(--color-pink-light));
+            color: white;
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(206,0,127,0.3);
+            max-width: 80%;
+        }
+        .about-image-box h4 { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; color: white; }
+        .about-image-box p  { color: white; opacity: 0.9; margin: 0; font-weight: 500; }
+
+        /* ── TEAM ── */
+        .team-section { padding: 60px 0; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 40px; }
+        .section-header h2 { font-size: clamp(2.1rem, 4.2vw, 2.7rem); font-weight: 800; margin-bottom: 16px; }
+        .section-header p { font-weight: 500; }
+        .team-category { margin-bottom: 50px; }
+        .team-category h3 {
+            font-size: 1.5rem; font-weight: 700; margin-bottom: 24px; padding-bottom: 10px;
+            border-bottom: 2px solid var(--color-bg-soft); display: inline-block;
+            color: var(--color-purple);
+        }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px; }
+
+        @keyframes float-frame {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50%      { transform: translateY(-8px) rotate(1deg); }
+        }
+        @keyframes badge-pop {
+            0%   { transform: translateX(-50%) scale(0.6); opacity: 0; }
+            100% { transform: translateX(-50%) scale(1); opacity: 1; }
+        }
+
+        .team-card {
+            background: #fff; border-radius: 28px;
+            padding: 44px 22px 28px;
+            text-align: center;
+            position: relative; overflow: hidden;
+            border: 1px solid #f0f0f0;
+            transition: transform 0.4s cubic-bezier(.34,1.56,.64,1), box-shadow 0.4s ease;
+        }
+        .team-card::before {
+            content: "";
+            position: absolute; top: -50px; right: -50px;
+            width: 150px; height: 150px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(206,0,127,0.16), transparent 70%);
+            opacity: 0; transition: opacity 0.4s ease, transform 0.5s ease;
+            pointer-events: none;
+        }
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 26px 50px rgba(106,56,141,0.16);
+        }
+        .team-card:hover::before { opacity: 1; transform: scale(1.25) translate(10px, 10px); }
+
+        .photo-frame {
+            position: relative;
+            width: 128px; height: 128px;
+            margin: 0 auto 30px;
+            padding: 5px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, var(--color-pink), var(--color-purple), var(--color-dark-purple));
+            animation: float-frame 5s ease-in-out infinite;
+            z-index: 1;
+        }
+        .team-card:hover .photo-frame {
+            animation-play-state: paused;
+            transform: rotate(-4deg) scale(1.06);
+            transition: transform 0.4s cubic-bezier(.34,1.56,.64,1);
+        }
+        .frame-inner {
+            width: 100%; height: 100%;
+            border-radius: 25px; overflow: hidden;
+            background: var(--color-bg-soft);
+        }
+        .frame-inner img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+            transition: transform 0.5s ease;
+        }
+        .team-card:hover .frame-inner img { transform: scale(1.15) rotate(2deg); }
+
+        .avatar-initials {
+            width: 100%; height: 100%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.7rem; font-weight: 800; color: #fff;
+            background: linear-gradient(135deg, var(--color-purple), var(--color-dark-purple));
+        }
+
+        .role-badge {
+            position: absolute; left: 50%; bottom: -16px;
+            transform: translateX(-50%);
+            display: inline-flex; align-items: center; gap: 6px;
+            background: linear-gradient(135deg, var(--color-pink), var(--color-pink-light));
+            color: #fff; font-weight: 800; font-size: 0.66rem;
+            text-transform: uppercase; letter-spacing: 0.05em;
+            padding: 7px 14px; border-radius: 100px; white-space: nowrap;
+            box-shadow: 0 8px 18px rgba(206,0,127,0.35);
+            animation: badge-pop 0.5s cubic-bezier(.34,1.56,.64,1) backwards;
+        }
+        .role-badge i { font-size: 0.85rem; }
+
+        .team-info { padding: 22px 4px 0; position: relative; z-index: 1; }
+        .team-info h4 {
+            display: inline-block; position: relative;
+            font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;
+        }
+        .team-info h4::after {
+            content: ""; position: absolute; left: 0; bottom: -5px;
+            width: 0; height: 3px; border-radius: 3px;
+            background: linear-gradient(90deg, var(--color-pink), var(--color-purple));
+            transition: width 0.35s ease;
+        }
+        .team-card:hover .team-info h4::after { width: 100%; }
+        .team-info .desc { margin-top: 14px; font-size: 0.9rem; font-weight: 500; color: var(--color-muted); }
+
+        /* ── CTA ── */
+        .cta-section {
+            padding: 60px 16px;
+            background: linear-gradient(135deg, var(--color-dark-purple) 0%, var(--color-purple) 100%);
+            color: #fff; text-align: center;
+            border-radius: 40px;
+            margin: 0 16px 60px;
+        }
+        .cta-section h2 { color: #fff; font-size: clamp(2.1rem, 4.2vw, 3.2rem); font-weight: 900; margin-bottom: 20px; }
+        .cta-section p  { color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 30px; font-size: 1.2rem; font-weight: 500; }
+
+        /* ══════════════════════════════════════
+           FOOTER — igual al código de referencia
+        ══════════════════════════════════════ */
+        .xpia-foot {
+            /* mismo degradado que el bloque de referencia */
+            flex-shrink: 0;
+            background: linear-gradient(
+                180deg,
+                #2a2172 0%,
+                #2a2172 100%
+            );
+            padding: clamp(48px,6vw,72px) 0 0;
+            font-family: var(--font-main);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .xpia-foot .foot-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 50px;
+        }
+
+        /* Columna marca */
+        .xpia-foot .blurb {
+            color: rgba(255,255,255,0.72);
+            font-size: 15px;
+            font-weight: 500;
+            margin-top: 14px;
+            max-width: 34ch;
+            line-height: 1.65;
+        }
+
+        .xpia-foot h4 {
+            font-size: 11px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.40);
+            margin: 0 0 18px;
+            font-weight: 800;
+        }
+
+        /* Columnas enlaces */
+        .xpia-foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+        .xpia-foot ul a {
+            font-weight: 600; font-size: 15px;
+            display: inline-flex; align-items: center; gap: 6px;
+            color: rgba(255,255,255,0.80);
+            text-decoration: none;
+            transition: color .2s;
+        }
+        .xpia-foot ul a:hover { color: #fff; }
+
+        /* Redes sociales */
+        .xpia-foot .soc { display: flex; flex-direction: column; gap: 12px; }
+        .xpia-foot .soc li { list-style: none; }
+        .xpia-foot .soc a {
+            display: flex; align-items: center; gap: 13px;
+            color: rgba(255,255,255,0.80); font-weight: 600; font-size: 15px;
+            text-decoration: none; transition: color .2s;
+            line-height: 1;
+        }
+        .xpia-foot .soc a:hover { color: #fff; }
+        .xpia-foot .soc-ic {
+            width: 38px; height: 38px; border-radius: 50%;
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255,255,255,0.16);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            transition: background .2s, border-color .2s;
+        }
+        .xpia-foot .soc a:hover .soc-ic { background: var(--color-pink); border-color: var(--color-pink); }
+        .xpia-foot .soc-ic svg { width: 16px; height: 16px; display: block; }
+
+        /* Contacto */
+        .xpia-foot .cnt { display: flex; flex-direction: column; gap: 12px; }
+        .xpia-foot .cnt li { list-style: none; }
+        .xpia-foot .cnt a,
+        .xpia-foot .cnt span {
+            display: flex; align-items: center; gap: 13px;
+            color: rgba(255,255,255,0.80); font-weight: 600; font-size: 15px;
+            text-decoration: none; transition: color .2s;
+            line-height: 1;
+        }
+        .xpia-foot .cnt a:hover { color: #fff; }
+        .xpia-foot .cnt-ic {
+            width: 38px; height: 38px; border-radius: 50%;
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255,255,255,0.16);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            transition: background .2s, border-color .2s;
+        }
+        .xpia-foot .cnt a:hover .cnt-ic { background: var(--color-pink); border-color: var(--color-pink); }
+        .xpia-foot .cnt-ic svg { width: 16px; height: 16px; display: block; }
+
+        /* Barra inferior */
+        .xpia-foot .foot-bottom {
+            display: flex; justify-content: space-between; flex-wrap: wrap;
+            gap: 12px; margin-top: 0; padding: 24px 0;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.38); font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .about-grid { gap: 40px; }
+            .xpia-foot .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+        }
+        @media (max-width: 768px) {
+            .hero { padding: 60px 0 30px; }
+            .hero h1 { font-size: 2.8rem; }
+            .about-section, .team-section { padding: 40px 0; }
+            .about-grid { grid-template-columns: 1fr; }
+            .about-image-box {
+                position: relative; bottom: auto; left: auto;
+                margin: -40px auto 0; width: 90%; max-width: none; text-align: center;
+            }
+            .stats-grid { grid-template-columns: 1fr; }
+            .cta-section { padding: 40px 16px; margin: 0 12px 30px; border-radius: 24px; }
+            .xpia-foot .foot-grid { grid-template-columns: 1fr; gap: 28px; }
+            .xpia-foot .foot-bottom { flex-direction: column; gap: 12px; text-align: center; }
+        }
+
+        /* Hace que el fondo morado del footer llene hasta el borde inferior del viewport */
+        html, body { height: 100%; }
+        .page-wrapper { background: #fff; }
+    </style>
+
+
+    <div class="page-wrapper">
+
+        <section class="hero">
+            <div class="container">
+                <span class="eyebrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    Empresa 100% Mexicana
+                </span>
+                <h1>Liderando la Transformación Digital en México</h1>
+                <p>Especialización tecnológica sin límites: combinamos visión estratégica, el ecosistema Odoo y el poder de la IA para escalar tu negocio.</p>
+                
+                <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                    
+                    <a href="#equipo" class="btn btn-pink">Conoce al Equipo</a>
+                    <a href="/servicios" class="btn btn-outline">Nuestros Servicios</a>
+                </div>
+
+                <div class="hero-image-container">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Equipo ERP Consultants" loading="lazy">
+                    </div>
+                    <div class="hero-float-card card-left">
+                        <span class="ic"><i class="ti ti-clock-hour-4"></i></span>
+                        <span><strong>10+ años</strong>De experiencia en Odoo</span>
+                    </div>
+                    <div class="hero-float-card card-right">
+                        <span class="ic"><i class="ti ti-bolt"></i></span>
+                        <span><strong>Implementación</strong>Rápida y a la medida</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="clients-section">
+            <div class="container">
+                <h6>Empresas que confían en nosotros</h6>
+                    <div class="clients-slider">
+                        <div class="clients-track">                
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/CHAPU.png" alt="Chapu" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/COFRADIA.jpg" alt="Cofradía" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/CUSPIDE.jpg" alt="Cúspide" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/DEGUZMAN.jpg" alt="De Guzmán" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/DELIZZIA.jpg" alt="Delizzia" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/HIMEX.png" alt="Himex" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/INSIDE.png" alt="Inside" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/IRRIMICH.png" alt="Irrimich" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/KEY%20SOLUTIONS.png" alt="Key Solutions" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LEXIE.jpg" alt="Lexie" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20AVO%20PACK%20SCRIPT.png" alt="Avo Pack" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20CANACO%20COLIMA.png" alt="Canaco Colima" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20CONSTRURAMA.png" alt="Construrama" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20IDEAN%20ARCH.png" alt="Idean Arch" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20PUBLIMEDIOS.png" alt="Publimedios" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20RIVIERA%20MAYA%20CHICO.png" alt="Riviera Maya" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGO%20TOVALDOS.png" alt="Tovaldos" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/LOGOtarsmx%20CHICO.png" alt="Tarsmx" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/NIT%20IRRIGACION.png" alt="NIT Irrigación" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/NUMMEX.png" alt="Nummex" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/PepsiCo_logo.png" alt="PepsiCo" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/SAMAR.png" alt="Samar" loading="lazy"></span><span class="logo-sep"></span>
+                            <span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/ZEED.jpg" alt="Zeed" loading="lazy"></span><span class="logo-item"><img src="https://9t0jbshui6m0unzh.public.blob.vercel-storage.com/xpia-test/logo%20G.png" alt="Logo G" loading="lazy"></span>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <span class="eyebrow">Sobre la Empresa</span>
+                        <h2>Potenciamos tu negocio con Odoo e IA</h2>
+                        <p>Implementamos sistemas de gestión empresarial con Odoo, el ERP de mayor crecimiento mundial. Automatizamos tareas y brindamos asesoría especializada para mejorar el control, productividad y visibilidad de tus procesos.</p>
+                        <p>Acompañamos a nuestros clientes en cada paso: desde el diagnóstico inicial hasta la puesta en marcha definitiva, asegurando una transición digital fluida y exitosa.</p>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <h3>20+</h3>
+                                <p>Clientes satisfechos</p>
+                            </div>
+                            <div class="stat-card">
+                                <h3>100%</h3>
+                                <p>Capital Mexicano</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Consultoría" loading="lazy">
+                        <div class="about-image-box">
+                            <h4>Expertos en Odoo</h4>
+                            <p>Consultoría, Implementación y Desarrollo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section" id="equipo">
+            <div class="container">
+                <div class="section-header">
+                    <span class="eyebrow">Nuestro Talento</span>
+                    <h2>Las mentes brillantes detrás de tu éxito</h2>
+                    <p>Un equipo multidisciplinario comprometido con la excelencia y la innovación tecnológica.</p>
+                </div>
+                
+                <div class="team-category">
+                    <h3>Socios Fundadores</h3>
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <div class="photo-frame">
+                                <div class="frame-inner"><img src="https://xpia.odoo.com/web/image/13986-d601b2c0/AVATAR-Luis-Osorio.webp" alt="Luis Osorio" loading="lazy"></div>
+                                <span class="role-badge"><i class="ti ti-crown"></i> Socio Fundador</span>
+                            </div>
+                            <div class="team-info">
+                                <h4>Ing. Luis Osorio</h4>
+                                <p class="desc">Líder estratégico con visión de transformación digital.</p>
+                            </div>
+                        </div>
+                        <div class="team-card">
+                            <div class="photo-frame">
+                                <div class="frame-inner"><img src="https://xpia.odoo.com/web/image/13985-50190e7f/AVATAR-Nahum-Perez.webp" alt="Nahúm Pérez" loading="lazy"></div>
+                                <span class="role-badge"><i class="ti ti-crown"></i> Socio Fundador</span>
+                            </div>
+                            <div class="team-info">
+                                <h4>Ing. Nahúm Pérez</h4>
+                                <p class="desc">Experto en arquitectura de sistemas y procesos ERP.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-category">
+                    <h3>Directivos</h3>
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <div class="photo-frame">
+                                <div class="frame-inner"><img src="https://xpia.odoo.com/web/image/13983-cf7711ec/AVATAR-Marisol-Rodriguez.webp" alt="Marisol Rodríguez" loading="lazy"></div>
+                                <span class="role-badge"><i class="ti ti-briefcase"></i> Directora Comercial</span>
+                            </div>
+                            <div class="team-info">
+                                <h4>Dra. Marisol Rodríguez</h4>
+                                <p class="desc">Liderando la expansión y relaciones estratégicas.</p>
+                            </div>
+                        </div>
+                        <div class="team-card">
+                            <div class="photo-frame">
+                                <div class="frame-inner"><img src="https://xpia.odoo.com/web/image/13987-f08f22dc/AVATAR-Lalo-Moreno.webp" alt="Eduardo Moreno" loading="lazy"></div>
+                                <span class="role-badge"><i class="ti ti-briefcase"></i> Project Manager</span>
+                            </div>
+                            <div class="team-info">
+                                <h4>D.C.G. Eduardo Moreno</h4>
+                                <p class="desc">20+ años de experiencia en diseño, publicidad y comunicación.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-category">
+                    <h3>Equipo de Desarrollo Senior</h3>
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <div class="photo-frame">
+                                <div class="frame-inner"><img src="https://xpia.odoo.com/web/image/13984-3199ebb2/AVATAR-Victor-Reyes.webp" alt="Víctor Reyes" loading="lazy"></div>
+                                <span class="role-badge"><i class="ti ti-code"></i> Programador Senior</span>
+                            </div>
+                            <div class="team-info">
+                                <h4>Ing. Víctor Reyes</h4>
+                                <p class="desc">Especialista en backend y optimización de Odoo.</p>
+                            </div>
+                        </div>
+                        <div class="team-card">
+                            <div class="photo-frame">
+                                <div class="frame-inner"><img src="https://xpia.odoo.com/web/image/13988-9b3ee2b2/AVATAR-Maria-Jose-Ocon.webp" alt="María José Ocón" loading="lazy"></div>
+                                <span class="role-badge"><i class="ti ti-code"></i> Programadora Senior</span>
+                            </div>
+                            <div class="team-info">
+                                <h4>Ing. María José Ocón</h4>
+                                <p class="desc">Experta en desarrollo de módulos personalizados.</p>
+                            </div>
+                        </div>
+                        <div class="team-card">
+                            <div class="photo-frame">
+                                <div class="frame-inner"><img src="https://xpia.odoo.com/web/image/13989-3e47d3c7/AVATAR-Jaime-Mora.webp" alt="Jaime" loading="lazy"></div>
+                                <span class="role-badge"><i class="ti ti-code"></i> Programador Junior</span>
+                            </div>
+                            <div class="team-info">
+                                <h4>Ing. Jaime</h4>
+                                <p class="desc">Apoyo técnico y desarrollo de funcionalidades.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-category">
+                    <h3>Talento en Crecimiento (Jóvenes Construyendo el Futuro)</h3>
+                    <div class="team-grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+                        <div class="team-card">
+                            <div class="photo-frame">
+                                <div class="frame-inner"><div class="avatar-initials">AI</div></div>
+                                <span class="role-badge"><i class="ti ti-school"></i> Training</span>
+                            </div>
+                            <div class="team-info">
+                                <h4>Ing. Ana Isabel</h4>
+                            </div>
+                        </div>
+                        <div class="team-card">
+                            <div class="photo-frame">
+                                <div class="frame-inner"><div class="avatar-initials">HA</div></div>
+                                <span class="role-badge"><i class="ti ti-school"></i> Training</span>
+                            </div>
+                            <div class="team-info">
+                                <h4>Ing. Hugo Alberto</h4>
+                            </div>
+                        </div>
+                        <div class="team-card">
+                            <div class="photo-frame">
+                                <div class="frame-inner"><div class="avatar-initials">JA</div></div>
+                                <span class="role-badge"><i class="ti ti-school"></i> Training</span>
+                            </div>
+                            <div class="team-info">
+                                <h4>Ing. Jorge Alfredo</h4>
+                            </div>
+                        </div>
+                        <div class="team-card">
+                            <div class="photo-frame">
+                                <div class="frame-inner"><div class="avatar-initials">LN</div></div>
+                                <span class="role-badge"><i class="ti ti-school"></i> Training</span>
+                            </div>
+                            <div class="team-info">
+                                <h4>Ing. Luis Nava</h4>
+                            </div>
+                        </div>
+                        <div class="team-card">
+                            <div class="photo-frame">
+                                <div class="frame-inner"><div class="avatar-initials">OH</div></div>
+                                <span class="role-badge"><i class="ti ti-school"></i> Training</span>
+                            </div>
+                            <div class="team-info">
+                                <h4>Ing. Óscar Heredia</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>¿Listo para transformar tu empresa?</h2>
+                <p>Déjanos ayudarte a implementar la mejor solución de gestión empresarial con el poder de Odoo e Inteligencia Artificial.</p>
+                
+                <a href="/informacion-de-contacto" class="btn btn-white">Agendar Diagnóstico Gratuito</a>
+            </div>
+        </section>
+    </div>
+    <footer class="xpia-foot">
+    <div class="container">
+        <div class="foot-grid">
+
+            
+            <div style="display:flex;flex-direction:column;align-items:flex-start;text-align:left;">
+                <img src="https://xx1nhzufuipctpue.public.blob.vercel-storage.com/xpia/LOGO%20FIRMA.png" alt="XPIÁ Technology Solutions" style="height:3.2em;width:auto;display:block;margin:0 0 16px;filter:brightness(0) invert(1);" loading="lazy">
+                <p class="blurb">Transformamos empresas con tecnología Odoo. Más de 10 años impulsando la evolución digital en México.</p>
+                <div style="display:flex;align-items:center;gap:10px;margin-top:20px;">
+                    <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,0.38);font-weight:700;">Partner de</span>
+                    <img src="https://giosyrabi.com/wp-content/uploads/2025/07/odoo_logo.png" alt="Odoo" style="height:1.3em;width:auto;display:block;filter:brightness(0) invert(1);opacity:0.55;" loading="lazy">
+                </div>
+            </div>
+
+            
+            <div>
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#industrias">Industrias</a></li>
+                    <li><a href="#casos">Casos de éxito</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+            
+            <div>
+                <h4>Síguenos</h4>
+                <ul class="soc">
+                    <li>
+                        <a href="https://www.linkedin.com/company/xpia-technology-solutions/" target="_blank" rel="noopener noreferrer">
+                            <span class="soc-ic">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </span>
+                            LinkedIn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/xpiatech" target="_blank" rel="noopener noreferrer">
+                            <span class="soc-ic">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </span>
+                            Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/share/1D5wy8S1ff/" target="_blank" rel="noopener noreferrer">
+                            <span class="soc-ic">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </span>
+                            Facebook
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            
+            <div>
+                <h4>Contacto</h4>
+                <ul class="cnt">
+                    <li>
+                        <a href="https://wa.me/523122701720" target="_blank" rel="noopener noreferrer">
+                            <span class="cnt-ic">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.962-1.418A9.956 9.956 0 0 0 12 22c5.522 0 10-4.478 10-10S17.522 2 12 2z"></path></svg>
+                            </span>
+                            WhatsApp
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:contacto@xpia.mx">
+                            <span class="cnt-ic">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                            </span>
+                            contacto@xpia.mx
+                        </a>
+                    </li>
+                    <li>
+                        <span>
+                            <span class="cnt-ic">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </span>
+                            México
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        
+        <div class="foot-bottom">
+            <span>© 2025 XPIÁ Technology Solutions. Todos los derechos reservados.</span>
+            <span>Hecho en México 🇲🇽</span>
+        </div>
+    </div>
+</footer>
